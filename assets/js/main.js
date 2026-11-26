@@ -5,7 +5,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 const SCHEDULE_DATA = {
   1: {
-    label: 'Hari 1 (19 Desember 2026) — Seminar Utama & Keynote',
+    label: 'Hari 1 · 19 Des 2026 — Seminar & Keynote',
     rows: [
       {
         time: '08.30 – 09.30',
@@ -42,7 +42,7 @@ const SCHEDULE_DATA = {
     ],
   },
   2: {
-    label: 'Hari 2 (20 Desember 2026) — Hands-on Workshop & Demo Day',
+    label: 'Hari 2 · 20 Des 2026 — Workshop & Demo Day',
     rows: [
       {
         time: '09.00 – 11.00',
@@ -289,17 +289,8 @@ function initLenisAndGsap() {
     }
   });
 
-  // Continuous HUD seal rotation & scroll parallax (gated for vestibular comfort)
+  // Scroll parallax (gated for vestibular comfort)
   if (!prefersReducedMotion) {
-    if (document.querySelector('.tf-hud-seal')) {
-      window.gsap.to('.tf-hud-seal', {
-        rotation: 360,
-        duration: 22,
-        repeat: -1,
-        ease: 'none',
-      });
-    }
-
     if (hasScrollTrigger && document.querySelector('.tf-hero-halo')) {
       window.gsap.to('.tf-hero-halo', {
         scrollTrigger: {

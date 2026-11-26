@@ -447,7 +447,7 @@ h4,
   background-color: var(--tf-lime-400);
 }
 
-/* Hero Cobalt Halo & Side Rail */
+/* Hero Cobalt Halo */
 .tf-hero-stage {
   position: relative;
 }
@@ -461,40 +461,10 @@ h4,
 }
 
 .tf-hero-art-img {
-  aspect-ratio: 3 / 4;
-  max-height: 490px;
+  aspect-ratio: 4 / 5;
+  max-height: 440px;
   object-fit: cover;
   display: block;
-}
-
-.tf-hero-overlay {
-  background: linear-gradient(180deg, rgba(3, 5, 12, 0.65) 0%, rgba(8, 12, 28, 0.96) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(96, 165, 250, 0.4);
-  color: #ffffff;
-}
-
-.tf-hero-overlay .btn-tf-lime {
-  background-color: var(--tf-lime-400);
-  border-color: var(--tf-lime-400);
-  color: var(--tf-void-950);
-}
-
-.tf-hero-overlay .btn-tf-hud {
-  background-color: rgba(18, 52, 226, 0.28);
-  border-color: rgba(147, 197, 253, 0.5);
-  color: #ffffff;
-}
-
-.tf-vertical-rail {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  letter-spacing: 0.16em;
-  font-size: 0.7rem;
-  color: var(--tf-muted);
-  border-left: 1px solid var(--tf-border);
-  padding-left: 0.65rem;
 }
 
 /* Alert Glass */
@@ -512,17 +482,11 @@ h4,
   border-left: 4px solid var(--tf-cobalt-600);
 }
 
-/* Cobalt Metrics Banner + Acid-Lime Quote Block (Reference Signature) */
+/* Cobalt Metrics Banner */
 .tf-cobalt-metrics {
   background: linear-gradient(115deg, #06102e 0%, #1234e2 58%, #0a1f7a 100%);
   border: 1px solid rgba(96, 165, 250, 0.45);
   color: #ffffff;
-}
-
-.tf-lime-quote {
-  background-color: var(--tf-lime-400);
-  color: var(--tf-void-950);
-  border: 1px solid var(--tf-lime-400);
 }
 
 /* Carousel & Track Thumbs (Vivid Full Color) */
@@ -560,17 +524,6 @@ h4,
 
 [data-bs-theme='light'] .carousel-indicators [data-bs-target] {
   background-color: var(--tf-cobalt-600);
-}
-
-/* Tools & Ecosystem Strip */
-.tf-cobalt-strip {
-  background: linear-gradient(90deg, rgba(8, 12, 28, 0.95), rgba(18, 52, 226, 0.32), rgba(8, 12, 28, 0.95));
-  border-top: 1px solid var(--tf-border);
-  border-bottom: 1px solid var(--tf-border);
-}
-
-[data-bs-theme='light'] .tf-cobalt-strip {
-  background: linear-gradient(90deg, #e7edf9, #dbeafe, #e7edf9);
 }
 
 /* Progress Bar Cyber */
@@ -626,31 +579,6 @@ select.form-select::picker-icon {
   --bs-table-hover-bg: rgba(18, 52, 226, 0.18);
 }
 
-/* Bottom Electric Cobalt Marquee */
-.tf-marquee-wrap {
-  background-color: var(--tf-cobalt-600);
-  color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid rgba(204, 255, 0, 0.45);
-}
-
-.tf-marquee-track {
-  display: inline-flex;
-  gap: 2.5rem;
-  padding: 0.65rem 0;
-  animation: tfMarquee 26s linear infinite;
-}
-
-@keyframes tfMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 /* Reduced Motion Guard */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -660,9 +588,5 @@ select.form-select::picker-icon {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .tf-marquee-track {
-    animation: none !important;
   }
 }
