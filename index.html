@@ -52,15 +52,15 @@
     <!-- Sticky Navbar (Modul 5.7) -->
     <header class="sticky-top tf-navbar">
       <nav id="mainNavbar" class="navbar navbar-expand-lg" aria-label="Navigasi utama">
-        <div class="container">
-          <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#beranda">
+        <div class="container flex-nowrap gap-2">
+          <a class="navbar-brand fw-bold d-flex align-items-center gap-2 me-0 text-truncate" href="#beranda">
             <span
-              class="d-inline-flex align-items-center justify-content-center rounded-1 px-2 py-1 text-white"
+              class="d-inline-flex align-items-center justify-content-center rounded-1 px-2 py-1 text-white flex-shrink-0"
               style="background-color: var(--tf-navy-900); font-size: 0.875rem;"
             >
               UTF26
             </span>
-            <span>UNSIKA TechFest</span>
+            <span class="text-truncate">UNSIKA TechFest</span>
           </a>
 
           <!-- Desktop Nav -->
@@ -1105,20 +1105,20 @@
             </div>
 
             <nav aria-label="Navigasi hari acara">
-              <ul class="pagination mb-0" id="schedulePagination">
+              <ul class="pagination mb-0 flex-wrap" id="schedulePagination">
                 <li class="page-item disabled" data-page-prev>
-                  <button type="button" class="page-link tf-touch-target" aria-label="Hari sebelumnya">
+                  <button type="button" class="page-link tf-touch-target text-nowrap" aria-label="Hari sebelumnya">
                     Sebelumnya
                   </button>
                 </li>
                 <li class="page-item active" aria-current="page" data-page="1">
-                  <button type="button" class="page-link tf-touch-target">Hari 1</button>
+                  <button type="button" class="page-link tf-touch-target text-nowrap">Hari 1</button>
                 </li>
                 <li class="page-item" data-page="2">
-                  <button type="button" class="page-link tf-touch-target">Hari 2</button>
+                  <button type="button" class="page-link tf-touch-target text-nowrap">Hari 2</button>
                 </li>
                 <li class="page-item" data-page-next>
-                  <button type="button" class="page-link tf-touch-target" aria-label="Hari berikutnya">
+                  <button type="button" class="page-link tf-touch-target text-nowrap" aria-label="Hari berikutnya">
                     Berikutnya
                   </button>
                 </li>
@@ -1337,7 +1337,7 @@
                           name="github"
                           placeholder="username"
                           aria-describedby="addonGithub"
-                          pattern="[A-Za-z0-9-]{2,39}"
+                          pattern="[A-Za-z0-9\-]{2,39}"
                           required
                         />
                         <div class="valid-feedback">Username GitHub valid.</div>
@@ -1504,7 +1504,7 @@
                 class="tf-hero-card rounded-3 overflow-hidden shadow-sm sticky-lg-top tf-sticky-pass"
                 aria-label="Pratinjau Kartu Akses Konferensi"
               >
-                <div class="tf-pass-strip px-4 py-3 d-flex justify-content-between align-items-center">
+                <div class="tf-pass-strip px-4 py-3 d-flex justify-content-between align-items-center gap-2 flex-wrap">
                   <span class="fw-semibold small">CONFERENCE PASS · 2026</span>
                   <span id="passCode" class="font-mono-code small fw-bold">UTF26-GEN-001</span>
                 </div>

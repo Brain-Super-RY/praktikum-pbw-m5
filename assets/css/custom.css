@@ -115,6 +115,7 @@ body {
 .tf-navbar {
   background-color: var(--tf-surface);
   border-bottom: 1px solid var(--tf-border);
+  z-index: 1030;
   transition: background-color var(--tf-dur-base) var(--tf-ease-out),
     border-color var(--tf-dur-base) var(--tf-ease-out);
 }
@@ -225,11 +226,42 @@ body {
   background-color: var(--tf-ink);
 }
 
-/* Sticky Conference Pass Offset Below Navbar */
+/* Sticky Conference Pass Offset & Layering Below Navbar */
+.tf-sticky-pass {
+  z-index: 1;
+}
+
 @media (min-width: 992px) {
   .tf-sticky-pass {
     top: 5.5rem;
   }
+}
+
+/* Dark Mode Accessible Button Contrast & Native Select Icon Guard */
+[data-bs-theme='dark'] .btn-outline-primary {
+  --bs-btn-color: #93c5fd;
+  --bs-btn-border-color: #60a5fa;
+  --bs-btn-hover-bg: #2563eb;
+  --bs-btn-hover-border-color: #2563eb;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-bg: #1d4ed8;
+  --bs-btn-active-border-color: #1d4ed8;
+  --bs-btn-active-color: #ffffff;
+}
+
+[data-bs-theme='dark'] .btn-outline-secondary {
+  --bs-btn-color: #cbd5e1;
+  --bs-btn-border-color: #64748b;
+  --bs-btn-hover-bg: #334155;
+  --bs-btn-hover-border-color: #475569;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-bg: #1e293b;
+  --bs-btn-active-border-color: #475569;
+  --bs-btn-active-color: #ffffff;
+}
+
+select.form-select::picker-icon {
+  display: none;
 }
 
 /* Reduced Motion Guard */
