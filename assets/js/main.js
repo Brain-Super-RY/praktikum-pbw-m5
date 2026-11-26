@@ -81,7 +81,7 @@
   };
 
   /**
-   * Resolve initial theme from localStorage or system preference.
+   * Resolve initial theme from localStorage, defaulting to cosmic dark mode.
    * @returns {'light' | 'dark'}
    */
   function getPreferredTheme() {
@@ -89,7 +89,7 @@
     if (saved === 'light' || saved === 'dark') {
       return saved;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark';
   }
 
   /**
