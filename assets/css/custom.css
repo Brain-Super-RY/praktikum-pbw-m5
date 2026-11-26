@@ -206,6 +206,25 @@ body {
   font-weight: 600;
 }
 
+/* Carousel Controls Contrast (Light & Dark Modes) */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--tf-navy-900);
+  border-radius: 50%;
+  background-size: 55%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--tf-ink);
+}
+
 /* Reduced Motion Guard */
 @media (prefers-reduced-motion: reduce) {
   *,

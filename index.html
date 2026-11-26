@@ -317,40 +317,965 @@
         </div>
       </section>
 
-      <!-- Section Placeholders (Filled in Phases 3 & 4) -->
+      <!-- Highlights, Carousel, Quota Progress & Benefits (Modul 5.4, 5.5, 5.6, 5.8) -->
       <section id="highlights" class="py-5 tf-section-divider">
         <div class="container">
-          <h2 class="h3 fw-bold mb-2">Highlight &amp; Kuota Track</h2>
-          <p class="text-body-secondary mb-0">
-            Sorotan sesi utama dan ketersediaan kursi per jalur workshop.
-          </p>
+          <div class="mb-4">
+            <h2 class="h3 fw-bold mb-1">Highlight &amp; Kuota Track</h2>
+            <p class="text-body-secondary mb-0">
+              Sorotan sesi utama, ketersediaan kursi per jalur workshop, dan fasilitas peserta.
+            </p>
+          </div>
+
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+              <div
+                id="eventCarousel"
+                class="carousel slide tf-surface rounded-3 overflow-hidden h-100"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-indicators mb-2">
+                  <button
+                    type="button"
+                    data-bs-target="#eventCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1: Keynote Web Architecture"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#eventCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2: Hands-on Workshop"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#eventCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3: Demo Day &amp; Networking"
+                  ></button>
+                </div>
+
+                <div class="carousel-inner h-100">
+                  <div class="carousel-item active p-4 p-md-5">
+                    <div class="row align-items-center g-4">
+                      <div class="col-md-5">
+                        <svg
+                          viewBox="0 0 240 160"
+                          class="img-fluid rounded-2 border w-100"
+                          role="img"
+                          aria-label="Ilustrasi arsitektur web modern"
+                        >
+                          <rect width="240" height="160" fill="#1E3A5F" />
+                          <rect x="20" y="24" width="200" height="24" rx="4" fill="#2563EB" />
+                          <rect x="20" y="60" width="92" height="76" rx="4" fill="#0F172A" />
+                          <rect x="124" y="60" width="96" height="34" rx="4" fill="#EAB308" />
+                          <rect x="124" y="102" width="96" height="34" rx="4" fill="#F8FAFC" />
+                        </svg>
+                      </div>
+                      <div class="col-md-7">
+                        <span class="badge text-bg-primary mb-2">Keynote · Hari 1</span>
+                        <h3 class="h4 fw-bold mb-2">Arsitektur Web Skala Produksi</h3>
+                        <p class="text-body-secondary mb-0">
+                          Membahas Core Web Vitals, desain sistem lintas tim, dan strategi rendering
+                          modern langsung dari principal engineer industri.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item p-4 p-md-5">
+                    <div class="row align-items-center g-4">
+                      <div class="col-md-5">
+                        <svg
+                          viewBox="0 0 240 160"
+                          class="img-fluid rounded-2 border w-100"
+                          role="img"
+                          aria-label="Ilustrasi kolaborasi Git dan Bootstrap"
+                        >
+                          <rect width="240" height="160" fill="#0F172A" />
+                          <circle cx="64" cy="80" r="14" fill="#EAB308" />
+                          <circle cx="120" cy="48" r="14" fill="#2563EB" />
+                          <circle cx="120" cy="112" r="14" fill="#F8FAFC" />
+                          <circle cx="176" cy="80" r="14" fill="#EAB308" />
+                          <path
+                            d="M78 74 L106 54 M78 86 L106 106 M134 54 L162 74 M134 106 L162 86"
+                            stroke="#94A3B8"
+                            stroke-width="3"
+                          />
+                        </svg>
+                      </div>
+                      <div class="col-md-7">
+                        <span class="badge text-bg-warning mb-2">Workshop · Hari 2</span>
+                        <h3 class="h4 fw-bold mb-2">Hands-on Bootstrap 5 &amp; Git Flow</h3>
+                        <p class="text-body-secondary mb-0">
+                          Praktik langsung membangun antarmuka responsif, Pull Request review, serta
+                          otomasi deployment statis ke GitHub Pages.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item p-4 p-md-5">
+                    <div class="row align-items-center g-4">
+                      <div class="col-md-5">
+                        <svg
+                          viewBox="0 0 240 160"
+                          class="img-fluid rounded-2 border w-100"
+                          role="img"
+                          aria-label="Ilustrasi Demo Day dan Networking"
+                        >
+                          <rect width="240" height="160" fill="#131E31" />
+                          <rect x="28" y="34" width="184" height="92" rx="6" fill="#1E3A5F" />
+                          <rect x="44" y="52" width="68" height="12" rx="2" fill="#EAB308" />
+                          <rect x="44" y="74" width="152" height="10" rx="2" fill="#CBD5E1" />
+                          <rect x="44" y="92" width="118" height="10" rx="2" fill="#94A3B8" />
+                        </svg>
+                      </div>
+                      <div class="col-md-7">
+                        <span class="badge text-bg-success mb-2">Demo Day · Hari 2</span>
+                        <h3 class="h4 fw-bold mb-2">Bedah Portofolio &amp; Networking</h3>
+                        <p class="text-body-secondary mb-0">
+                          Presentasi proyek mahasiswa Fasilkom UNSIKA di hadapan mentor, lengkap
+                          dengan sesi umpan balik kode dan jejaring karier lokal.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#eventCarousel"
+                  data-bs-slide="prev"
+                  aria-label="Slide sebelumnya"
+                >
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#eventCarousel"
+                  data-bs-slide="next"
+                  aria-label="Slide berikutnya"
+                >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-lg-5 d-flex flex-column gap-4">
+              <!-- Quota Progress Bars (Modul 5.5) -->
+              <div class="tf-surface rounded-3 p-4">
+                <h3 class="h5 fw-bold mb-3">Okupansi Kursi per Track</h3>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-semibold mb-1">
+                    <span>Web Modern &amp; UI Engineering</span>
+                    <span>82 / 100</span>
+                  </div>
+                  <div
+                    class="progress"
+                    role="progressbar"
+                    aria-label="Kuota track Web Modern"
+                    aria-valuenow="82"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="height: 0.75rem;"
+                  >
+                    <div class="progress-bar bg-primary" style="width: 82%"></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-semibold mb-1">
+                    <span>AI Engineering &amp; Cloud</span>
+                    <span>85 / 125</span>
+                  </div>
+                  <div
+                    class="progress"
+                    role="progressbar"
+                    aria-label="Kuota track AI dan Cloud"
+                    aria-valuenow="68"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="height: 0.75rem;"
+                  >
+                    <div class="progress-bar bg-warning" style="width: 68%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="d-flex justify-content-between small fw-semibold mb-1">
+                    <span>Cyber Security &amp; AppSec</span>
+                    <span>114 / 125</span>
+                  </div>
+                  <div
+                    class="progress"
+                    role="progressbar"
+                    aria-label="Kuota track Cyber Security"
+                    aria-valuenow="91"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="height: 0.75rem;"
+                  >
+                    <div class="progress-bar bg-danger" style="width: 91%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Participant Benefits List Group (Modul 5.6) -->
+              <div class="tf-surface rounded-3 p-4 flex-grow-1">
+                <h3 class="h5 fw-bold mb-3">Benefit Peserta Terdaftar</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
+                    <i class="bi bi-patch-check-fill text-primary" aria-hidden="true"></i>
+                    <span>E-Sertifikat resmi Fasilkom UNSIKA (12 JP)</span>
+                  </li>
+                  <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
+                    <i class="bi bi-git text-primary" aria-hidden="true"></i>
+                    <span>Akses repositori starter dan slide materi</span>
+                  </li>
+                  <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
+                    <i class="bi bi-code-square text-primary" aria-hidden="true"></i>
+                    <span>Sesi code review &amp; klinik portofolio langsung</span>
+                  </li>
+                  <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
+                    <i class="bi bi-people-fill text-primary" aria-hidden="true"></i>
+                    <span>Networking komunitas developer Karawang &amp; Bekasi</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- Speakers Grid with Filter Button Group, Tooltip, Popover & Modal (Modul 5.2, 5.5, 5.7, 5.8) -->
       <section id="speakers" class="py-5 tf-section-divider">
         <div class="container">
-          <h2 class="h3 fw-bold mb-2">Pembicara</h2>
-          <p class="text-body-secondary mb-0">
-            Praktisi dan akademisi yang berbagi studi kasus langsung.
-          </p>
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4"
+          >
+            <div>
+              <h2 class="h3 fw-bold mb-1">Pembicara &amp; Mentor</h2>
+              <p class="text-body-secondary mb-0">
+                Praktisi industri dan akademisi yang berbagi studi kasus nyata.
+              </p>
+            </div>
+
+            <div
+              class="btn-group flex-wrap"
+              role="group"
+              aria-label="Filter kategori pembicara"
+              id="speakerFilterGroup"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-primary active tf-touch-target"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                Semua
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary tf-touch-target"
+                data-filter="web"
+                aria-pressed="false"
+              >
+                Web
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary tf-touch-target"
+                data-filter="ai-cloud"
+                aria-pressed="false"
+              >
+                AI/Cloud
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary tf-touch-target"
+                data-filter="security"
+                aria-pressed="false"
+              >
+                Security
+              </button>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="speakersGrid">
+            <!-- Speaker 1 -->
+            <div class="col" data-speaker-card data-category="web">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Nadia Kusuma"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#1E3A5F" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          NK
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-primary mb-1">Web Modern</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Nadia Kusuma</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Keynote Utama · Hari 1 (09.30 WIB)"
+                      aria-label="Info jadwal Nadia Kusuma"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    Staff Frontend Engineer · Nusantara Pay
+                  </p>
+                  <p class="card-text mb-4">
+                    Design System yang Konsisten: Mengelola Token &amp; Aksesibilitas di Skala Tim.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Nadia Kusuma"
+                      data-speaker-role="Staff Frontend Engineer · Nusantara Pay"
+                      data-speaker-track="Web Modern"
+                      data-speaker-topic="Design System yang Konsisten: Mengelola Token & Aksesibilitas di Skala Tim"
+                      data-speaker-time="Hari 1 · 09.30–10.30 WIB · Auditorium Utama"
+                      data-speaker-abstract="Membedah cara menyusun CSS custom properties berlapis (primitive, semantic, component), audit kontras WCAG AA, dan menjaga keselarasan UI antar-squad tanpa memperlambat rilis."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Pemahaman dasar HTML semantik dan CSS variabel."
+                      aria-label="Lihat prasyarat sesi Nadia Kusuma"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Speaker 2 -->
+            <div class="col" data-speaker-card data-category="web">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Bagas Pratama"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#2563EB" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          BP
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-primary mb-1">Web Modern</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Bagas Pratama</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Workshop Praktik · Hari 2 (09.00 WIB)"
+                      aria-label="Info jadwal Bagas Pratama"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    UI Platform Lead · Logistik Kita
+                  </p>
+                  <p class="card-text mb-4">
+                    Bootstrap 5.3 Tanpa Bloat: Grid Responsif, Dark Mode, dan Validasi Native.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Bagas Pratama"
+                      data-speaker-role="UI Platform Lead · Logistik Kita"
+                      data-speaker-track="Web Modern"
+                      data-speaker-topic="Bootstrap 5.3 Tanpa Bloat: Grid Responsif, Dark Mode, dan Validasi Native"
+                      data-speaker-time="Hari 2 · 09.00–11.00 WIB · Lab Informatika A"
+                      data-speaker-abstract="Sesi coding langsung membangun landing page mobile-first menggunakan Bootstrap 5.3.8 CDN, SRI, color mode data-bs-theme, dan Constraint Validation API tanpa jQuery."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Bawa laptop dengan VS Code dan Git terpasang."
+                      aria-label="Lihat prasyarat sesi Bagas Pratama"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Speaker 3 -->
+            <div class="col" data-speaker-card data-category="ai-cloud">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Dr. Rahmawati"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#A16207" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          DR
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-warning mb-1">AI &amp; Cloud</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Dr. Rahmawati</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Sesi Pleno · Hari 1 (11.00 WIB)"
+                      aria-label="Info jadwal Dr. Rahmawati"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    Dosen AI &amp; Sistem Terdistribusi · Fasilkom UNSIKA
+                  </p>
+                  <p class="card-text mb-4">
+                    Integrasi LLM ke Aplikasi Web Kampus dengan Evaluasi Latensi dan Biaya.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Dr. Rahmawati"
+                      data-speaker-role="Dosen AI & Sistem Terdistribusi · Fasilkom UNSIKA"
+                      data-speaker-track="AI & Cloud"
+                      data-speaker-topic="Integrasi LLM ke Aplikasi Web Kampus dengan Evaluasi Latensi dan Biaya"
+                      data-speaker-time="Hari 1 · 11.00–12.00 WIB · Auditorium Utama"
+                      data-speaker-abstract="Studi kasus merancang fitur pencarian semantik akademik berbasis RAG yang terukur, mulai dari caching embedding hingga pemantauan biaya token."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Terbuka untuk semua semester; dasar HTTP API membantu."
+                      aria-label="Lihat prasyarat sesi Dr. Rahmawati"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Speaker 4 -->
+            <div class="col" data-speaker-card data-category="ai-cloud">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Dimas Nugroho"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#334155" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          DN
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-warning mb-1">AI &amp; Cloud</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Dimas Nugroho</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Workshop DevOps · Hari 2 (13.00 WIB)"
+                      aria-label="Info jadwal Dimas Nugroho"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    DevOps Architect · Awan Lokal ID
+                  </p>
+                  <p class="card-text mb-4">
+                    Alur Git Profesional: Branch Protection, PR Review, dan Otomasi Rilis Tag.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Dimas Nugroho"
+                      data-speaker-role="DevOps Architect · Awan Lokal ID"
+                      data-speaker-track="AI & Cloud"
+                      data-speaker-topic="Alur Git Profesional: Branch Protection, PR Review, dan Otomasi Rilis Tag"
+                      data-speaker-time="Hari 2 · 13.00–14.30 WIB · Lab Informatika B"
+                      data-speaker-abstract="Praktik kolaborasi tim menggunakan Conventional Commits, Pull Request workflow, penyelesaian merge conflict yang aman, serta rollback dengan git revert."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Akun GitHub aktif dan Git CLI versi terbaru."
+                      aria-label="Lihat prasyarat sesi Dimas Nugroho"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Speaker 5 -->
+            <div class="col" data-speaker-card data-category="security">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Farhan Hakim"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#991B1B" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          FH
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-danger mb-1">Cyber Security</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Farhan Hakim</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Sesi Security · Hari 1 (13.30 WIB)"
+                      aria-label="Info jadwal Farhan Hakim"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    Application Security Engineer · Sentinel Bank
+                  </p>
+                  <p class="card-text mb-4">
+                    Mengamankan Form Web &amp; CDN: XSS, Validasi Sisi Server, dan SRI Hashing.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Farhan Hakim"
+                      data-speaker-role="Application Security Engineer · Sentinel Bank"
+                      data-speaker-track="Cyber Security"
+                      data-speaker-topic="Mengamankan Form Web & CDN: XSS, Validasi Sisi Server, dan SRI Hashing"
+                      data-speaker-time="Hari 1 · 13.30–14.30 WIB · Auditorium Utama"
+                      data-speaker-abstract="Mengulas celah umum pada aplikasi web mahasiswa: manipulasi DOM dengan innerHTML, ketergantungan pada validasi klien semata, dan pentingnya Subresource Integrity pada aset CDN."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Memahami alur request/response HTTP dan formulir HTML."
+                      aria-label="Lihat prasyarat sesi Farhan Hakim"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Speaker 6 -->
+            <div class="col" data-speaker-card data-category="security">
+              <article class="card h-100 tf-card-interactive">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        role="img"
+                        aria-label="Inisial Sinta Maharani"
+                        class="rounded-2 flex-shrink-0"
+                      >
+                        <rect width="48" height="48" rx="8" fill="#0F172A" />
+                        <text
+                          x="50%"
+                          y="54%"
+                          text-anchor="middle"
+                          dominant-baseline="middle"
+                          fill="#FFFFFF"
+                          font-size="16"
+                          font-weight="700"
+                        >
+                          SM
+                        </text>
+                      </svg>
+                      <div>
+                        <span class="badge text-bg-danger mb-1">Cyber Security</span>
+                        <h3 class="h5 card-title fw-bold mb-0">Sinta Maharani</h3>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-link text-body-secondary p-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Panel Penutup · Hari 2 (15.00 WIB)"
+                      aria-label="Info jadwal Sinta Maharani"
+                    >
+                      <i class="bi bi-info-circle fs-5" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <p class="small text-body-secondary fw-semibold mb-2">
+                    Lead Security Analyst · Garuda Cyber Lab
+                  </p>
+                  <p class="card-text mb-4">
+                    Audit Supply Chain &amp; Secret Scanning di Repositori GitHub Terbuka.
+                  </p>
+                  <div class="mt-auto d-flex gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      data-bs-toggle="modal"
+                      data-bs-target="#speakerModal"
+                      data-speaker-name="Sinta Maharani"
+                      data-speaker-role="Lead Security Analyst · Garuda Cyber Lab"
+                      data-speaker-track="Cyber Security"
+                      data-speaker-topic="Audit Supply Chain & Secret Scanning di Repositori GitHub Terbuka"
+                      data-speaker-time="Hari 2 · 15.00–16.00 WIB · Auditorium Utama"
+                      data-speaker-abstract="Bagaimana mencegah kebocoran API key dengan .gitignore, pre-commit hooks, serta meninjau dependensi pihak ketiga sebelum proyek dipublikasikan."
+                    >
+                      Detail Sesi
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      data-bs-toggle="popover"
+                      data-bs-trigger="focus"
+                      data-bs-title="Prasyarat Sesi"
+                      data-bs-content="Terbuka untuk seluruh peserta; cocok bagi tim pengembang."
+                      aria-label="Lihat prasyarat sesi Sinta Maharani"
+                    >
+                      Prasyarat
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- Responsive Schedule Table & Day Pagination (Modul 5.3, 5.6) -->
       <section id="schedule" class="py-5 tf-section-divider">
         <div class="container">
-          <h2 class="h3 fw-bold mb-2">Jadwal Acara</h2>
-          <p class="text-body-secondary mb-0">
-            Susunan seminar dan workshop selama dua hari di Auditorium UNSIKA.
-          </p>
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4"
+          >
+            <div>
+              <h2 class="h3 fw-bold mb-1">Jadwal Acara</h2>
+              <p id="scheduleDayLabel" class="text-body-secondary mb-0">
+                Hari 1 (19 Desember 2026) — Seminar Utama &amp; Keynote
+              </p>
+            </div>
+
+            <nav aria-label="Navigasi hari acara">
+              <ul class="pagination mb-0" id="schedulePagination">
+                <li class="page-item disabled" data-page-prev>
+                  <button type="button" class="page-link tf-touch-target" aria-label="Hari sebelumnya">
+                    Sebelumnya
+                  </button>
+                </li>
+                <li class="page-item active" aria-current="page" data-page="1">
+                  <button type="button" class="page-link tf-touch-target">Hari 1</button>
+                </li>
+                <li class="page-item" data-page="2">
+                  <button type="button" class="page-link tf-touch-target">Hari 2</button>
+                </li>
+                <li class="page-item" data-page-next>
+                  <button type="button" class="page-link tf-touch-target" aria-label="Hari berikutnya">
+                    Berikutnya
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="tf-surface rounded-3 overflow-hidden">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered align-middle mb-0">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">Waktu (WIB)</th>
+                    <th scope="col">Sesi</th>
+                    <th scope="col">Pembicara</th>
+                    <th scope="col">Ruangan</th>
+                    <th scope="col">Track</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleTableBody">
+                  <tr>
+                    <td class="font-mono-code text-nowrap">08.30 – 09.30</td>
+                    <td class="fw-semibold">Registrasi Ulang &amp; Pembukaan Dekan Fasilkom</td>
+                    <td>Panitia UNSIKA TechFest</td>
+                    <td>Auditorium Utama</td>
+                    <td><span class="badge text-bg-secondary">Umum</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono-code text-nowrap">09.30 – 10.30</td>
+                    <td class="fw-semibold">Design System yang Konsisten di Skala Tim</td>
+                    <td>Nadia Kusuma</td>
+                    <td>Auditorium Utama</td>
+                    <td><span class="badge text-bg-primary">Web Modern</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono-code text-nowrap">11.00 – 12.00</td>
+                    <td class="fw-semibold">Integrasi LLM ke Aplikasi Web Kampus</td>
+                    <td>Dr. Rahmawati</td>
+                    <td>Auditorium Utama</td>
+                    <td><span class="badge text-bg-warning">AI &amp; Cloud</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono-code text-nowrap">13.30 – 14.30</td>
+                    <td class="fw-semibold">Mengamankan Form Web &amp; Aset CDN</td>
+                    <td>Farhan Hakim</td>
+                    <td>Auditorium Utama</td>
+                    <td><span class="badge text-bg-danger">Cyber Security</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- FAQ Accordion (Modul 5.7) -->
       <section id="faq" class="py-5 tf-section-divider">
         <div class="container">
-          <h2 class="h3 fw-bold mb-2">Pertanyaan Umum</h2>
-          <p class="text-body-secondary mb-0">
-            Informasi teknis terkait kehadiran, sertifikat, dan perlengkapan workshop.
-          </p>
+          <div class="mb-4">
+            <h2 class="h3 fw-bold mb-1">Pertanyaan Umum</h2>
+            <p class="text-body-secondary mb-0">
+              Informasi teknis terkait kepesertaan, perlengkapan workshop, dan e-sertifikat.
+            </p>
+          </div>
+
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqOne"
+                  aria-expanded="true"
+                  aria-controls="faqOne"
+                >
+                  Apakah acara ini gratis dan terbuka untuk mahasiswa luar UNSIKA?
+                </button>
+              </h3>
+              <div
+                id="faqOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Ya. Seluruh sesi seminar dan workshop gratis selama kuota Early Bird masih tersedia
+                  hingga 10 Desember 2026. Mahasiswa dari perguruan tinggi lain maupun pengembang
+                  umum dapat memilih kategori yang sesuai di formulir pendaftaran.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqTwo"
+                  aria-expanded="false"
+                  aria-controls="faqTwo"
+                >
+                  Apakah peserta wajib membawa laptop pada Hari 2?
+                </button>
+              </h3>
+              <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Peserta workshop Hari 2 sangat disarankan membawa laptop dengan browser modern,
+                  VS Code, dan Git terinstal. Untuk Lab Informatika tersedia unit cadangan terbatas
+                  bagi mahasiswa yang mengonfirmasi saat registrasi ulang.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqThree"
+                  aria-expanded="false"
+                  aria-controls="faqThree"
+                >
+                  Bagaimana syarat mendapatkan E-Sertifikat Fasilkom UNSIKA?
+                </button>
+              </h3>
+              <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Peserta wajib melakukan check-in di lokasi menggunakan kode tiket pada kartu
+                  akses dan mengisi daftar hadir penutup di akhir sesi. E-sertifikat dikirim ke
+                  alamat email terdaftar maksimal 5 hari kerja setelah acara berakhir.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqFour"
+                  aria-expanded="false"
+                  aria-controls="faqFour"
+                >
+                  Bisakah mengganti pilihan Track Workshop setelah mendaftar?
+                </button>
+              </h3>
+              <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Bisa, selama kuota track tujuan belum penuh (di bawah 100%). Hubungi panitia
+                  melalui email resmi dengan menyertakan kode tiket dan username GitHub Anda.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -396,6 +1321,49 @@
         </div>
       </div>
     </footer>
+
+    <!-- Speaker Detail Modal (Modul 5.8) -->
+    <div
+      class="modal fade"
+      id="speakerModal"
+      tabindex="-1"
+      aria-labelledby="speakerModalName"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <span id="speakerModalTrack" class="badge text-bg-primary mb-1">Track</span>
+              <h2 class="modal-title fs-5 fw-bold mb-0" id="speakerModalName">Nama Pembicara</h2>
+            </div>
+            <button
+              type="button"
+              class="btn-close tf-touch-target"
+              data-bs-dismiss="modal"
+              aria-label="Tutup detail pembicara"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="speakerModalRole" class="small text-body-secondary fw-semibold mb-2"></p>
+            <h3 id="speakerModalTopic" class="h6 fw-bold mb-2"></h3>
+            <p class="small font-mono-code text-body-secondary mb-3">
+              <i class="bi bi-clock me-1" aria-hidden="true"></i>
+              <span id="speakerModalTime"></span>
+            </p>
+            <p id="speakerModalAbstract" class="mb-0"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary tf-touch-target" data-bs-dismiss="modal">
+              Tutup
+            </button>
+            <a href="#register" class="btn btn-accent tf-touch-target" data-bs-dismiss="modal">
+              Ambil Tiket Sesi Ini
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap 5.3.8 JS Bundle via jsDelivr CDN (includes Popper) -->
     <script
