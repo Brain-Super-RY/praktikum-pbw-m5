@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" data-bs-theme="light">
+<html lang="id" data-bs-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,11 +9,11 @@
     />
     <title>UNSIKA TechFest 2026 — Fasilkom UNSIKA</title>
 
-    <!-- Google Fonts: Inter & Playfair Display -->
+    <!-- Google Fonts: Space Grotesk & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -31,16 +31,18 @@
       rel="stylesheet"
     />
 
-    <!-- Custom Design Tokens & Overrides -->
+    <!-- Custom Design Tokens & Glassmorphism Styles -->
     <link href="assets/css/custom.css" rel="stylesheet" />
   </head>
 
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#mainNavbar"
-    data-bs-smooth-scroll="true"
-    tabindex="0"
-  >
+  <body data-bs-spy="scroll" data-bs-target="#mainNavbar" tabindex="0">
+    <!-- Ambient Cosmic Radial Glow Canvas -->
+    <div class="tf-ambient-canvas" aria-hidden="true">
+      <div class="tf-orb tf-orb-violet"></div>
+      <div class="tf-orb tf-orb-blue"></div>
+      <div class="tf-orb tf-orb-cyan"></div>
+    </div>
+
     <!-- Skip Link for Keyboard Navigation -->
     <a
       href="#beranda"
@@ -53,19 +55,17 @@
     <header class="sticky-top tf-navbar">
       <nav id="mainNavbar" class="navbar navbar-expand-lg" aria-label="Navigasi utama">
         <div class="container flex-nowrap gap-2">
-          <a class="navbar-brand fw-bold d-flex align-items-center gap-2 me-0 text-truncate" href="#beranda">
-            <span
-              class="d-inline-flex align-items-center justify-content-center rounded-1 px-2 py-1 text-white flex-shrink-0"
-              style="background-color: var(--tf-navy-900); font-size: 0.875rem;"
-            >
-              UTF26
-            </span>
-            <span class="text-truncate">UNSIKA TechFest</span>
+          <a
+            class="navbar-brand fw-bold d-flex align-items-center gap-2 me-0 text-truncate"
+            href="#beranda"
+          >
+            <span class="font-display">UNSIKA</span>
+            <span class="tf-brand-pill flex-shrink-0">TECHFEST</span>
           </a>
 
           <!-- Desktop Nav -->
           <div class="collapse navbar-collapse" id="desktopNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-1">
               <li class="nav-item">
                 <a class="nav-link px-3" href="#beranda">Beranda</a>
               </li>
@@ -112,37 +112,37 @@
               </li>
             </ul>
 
-            <div class="d-flex align-items-center gap-2 ms-lg-3">
+            <div class="d-flex align-items-center gap-2">
               <button
                 type="button"
                 id="themeToggle"
-                class="btn btn-outline-secondary tf-touch-target"
+                class="btn btn-tf-glass rounded-pill tf-touch-target px-3"
                 data-theme-toggle
-                aria-pressed="false"
-                aria-label="Aktifkan mode gelap"
+                aria-pressed="true"
+                aria-label="Aktifkan mode terang"
               >
-                <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
+                <i class="bi bi-sun-fill" data-theme-icon aria-hidden="true"></i>
               </button>
-              <a href="#register" class="btn btn-accent tf-touch-target px-3">
-                Ambil Tiket Gratis
+              <a href="#register" class="btn btn-tf-gradient rounded-pill tf-touch-target px-4">
+                Ambil Tiket
               </a>
             </div>
           </div>
 
           <!-- Mobile Controls (< lg) -->
-          <div class="d-flex d-lg-none align-items-center gap-2">
+          <div class="d-flex d-lg-none align-items-center gap-2 flex-shrink-0">
             <button
               type="button"
-              class="btn btn-outline-secondary tf-touch-target"
+              class="btn btn-tf-glass rounded-pill tf-touch-target"
               data-theme-toggle
-              aria-pressed="false"
-              aria-label="Aktifkan mode gelap"
+              aria-pressed="true"
+              aria-label="Aktifkan mode terang"
             >
-              <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
+              <i class="bi bi-sun-fill" data-theme-icon aria-hidden="true"></i>
             </button>
             <button
               type="button"
-              class="btn btn-outline-secondary tf-touch-target"
+              class="btn btn-tf-glass rounded-pill tf-touch-target"
               data-bs-toggle="offcanvas"
               data-bs-target="#mobileMenuOffcanvas"
               aria-controls="mobileMenuOffcanvas"
@@ -198,14 +198,18 @@
         <div class="pt-3 border-top d-grid gap-2">
           <button
             type="button"
-            class="btn btn-outline-secondary tf-touch-target gap-2"
+            class="btn btn-tf-glass rounded-pill tf-touch-target gap-2"
             data-theme-toggle
-            aria-pressed="false"
+            aria-pressed="true"
           >
-            <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
-            <span data-theme-label>Mode Gelap</span>
+            <i class="bi bi-sun-fill" data-theme-icon aria-hidden="true"></i>
+            <span data-theme-label>Mode Terang</span>
           </button>
-          <a href="#register" class="btn btn-accent tf-touch-target" data-bs-dismiss="offcanvas">
+          <a
+            href="#register"
+            class="btn btn-tf-gradient rounded-pill tf-touch-target"
+            data-bs-dismiss="offcanvas"
+          >
             Ambil Tiket Gratis
           </a>
         </div>
@@ -216,11 +220,11 @@
       <!-- Dismissible Announcement Alert (Modul 5.4) -->
       <div class="container pt-3">
         <div
-          class="alert alert-warning alert-dismissible fade show d-flex align-items-center justify-content-between mb-0"
+          class="alert tf-alert-glass alert-dismissible fade show d-flex align-items-center justify-content-between rounded-4 mb-0"
           role="alert"
         >
-          <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-megaphone-fill flex-shrink-0" aria-hidden="true"></i>
+          <div class="d-flex align-items-center gap-2 small">
+            <i class="bi bi-stars text-info flex-shrink-0" aria-hidden="true"></i>
             <span>
               <strong>Registrasi Early Bird dibuka.</strong> Kuota workshop gratis ditutup pada
               <strong>10 Desember 2026</strong> pukul 23.59 WIB.
@@ -238,76 +242,99 @@
       <!-- Hero Section (Modul 5.1, 5.2, 5.3, 5.4) -->
       <section id="beranda" class="py-5">
         <div class="container">
-          <div class="p-4 p-lg-5 rounded-3 tf-surface tf-hero-grid">
-            <div class="row align-items-center g-4 g-lg-5">
-              <div class="col-lg-7">
-                <p class="fw-semibold text-body-secondary mb-2">
-                  <i class="bi bi-calendar-event me-2" aria-hidden="true"></i>
-                  19–20 Desember 2026 · Auditorium UNSIKA Karawang
-                </p>
-                <h1 class="display-4 fw-bold mb-3">
-                  Merancang Web Modern yang
-                  <span class="font-editorial">Terukur</span> &amp; Siap Produksi
-                </h1>
-                <p class="lead text-body-secondary mb-4" style="max-width: 58ch;">
-                  Dua hari konferensi rekayasa web, cloud architecture, dan keamanan aplikasi
-                  bersama praktisi industri dan dosen Fasilkom UNSIKA. Gratis untuk mahasiswa dan
-                  terbuka bagi pengembang umum.
-                </p>
-                <div class="d-flex flex-wrap gap-3">
-                  <a href="#register" class="btn btn-accent btn-lg tf-touch-target px-4">
-                    Ambil Tiket Gratis
-                  </a>
-                  <a href="#schedule" class="btn btn-outline-primary btn-lg tf-touch-target px-4">
-                    Lihat Jadwal
-                  </a>
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <p class="fw-semibold text-body-secondary mb-2">
+                <i class="bi bi-calendar-event me-2 text-info" aria-hidden="true"></i>
+                19–20 Desember 2026 · Auditorium UNSIKA Karawang
+              </p>
+              <h1 class="display-4 fw-bold mb-3">
+                Bangun, Eksplorasi, dan Rilis Karya Web Modern
+              </h1>
+              <p class="lead text-body-secondary mb-4" style="max-width: 56ch;">
+                Dua hari konferensi rekayasa web, cloud architecture, dan keamanan aplikasi bersama
+                praktisi industri serta dosen Fasilkom UNSIKA. Gratis untuk mahasiswa dan terbuka
+                bagi pengembang umum.
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                <a href="#register" class="btn btn-tf-gradient btn-lg rounded-pill tf-touch-target px-4">
+                  Ambil Tiket Gratis
+                </a>
+                <a href="#schedule" class="btn btn-tf-glass btn-lg rounded-pill tf-touch-target px-4">
+                  Lihat Jadwal
+                </a>
+                <a
+                  href="#highlights"
+                  class="link-body-emphasis text-decoration-none fw-semibold d-inline-flex align-items-center gap-2 tf-touch-target px-2"
+                >
+                  <i class="bi bi-play-circle-fill fs-5 text-info" aria-hidden="true"></i>
+                  <span>Sorotan Acara</span>
+                </a>
+              </div>
+
+              <!-- Stats Glass Pill Bar (Matches Reference) -->
+              <div class="tf-stats-pill rounded-4 px-4 py-3 d-inline-flex flex-wrap align-items-center gap-4 mb-4">
+                <div>
+                  <div class="fs-4 fw-bold font-display">350+</div>
+                  <div class="small text-body-secondary">Kursi Peserta</div>
+                </div>
+                <div class="vr opacity-25 d-none d-sm-block"></div>
+                <div>
+                  <div class="fs-4 fw-bold font-display">6+</div>
+                  <div class="small text-body-secondary">Pembicara Ahli</div>
+                </div>
+                <div class="vr opacity-25 d-none d-sm-block"></div>
+                <div>
+                  <div class="fs-4 fw-bold font-display">3</div>
+                  <div class="small text-body-secondary">Track Utama</div>
                 </div>
               </div>
 
-              <!-- Editorial Auditorium Pass Visual (Zero External Image Dependencies) -->
-              <div class="col-lg-5">
-                <div class="tf-hero-card rounded-3 overflow-hidden shadow-sm">
-                  <div class="tf-pass-strip px-4 py-3 d-flex justify-content-between align-items-center">
-                    <span class="fw-semibold small">FASILKOM UNSIKA · KARAWANG</span>
-                    <span class="font-mono-code small">EDISI 2026</span>
-                  </div>
-                  <div class="p-4">
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                      <svg
-                        width="56"
-                        height="56"
-                        viewBox="0 0 56 56"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="img-fluid rounded-2 flex-shrink-0"
-                        role="img"
-                        aria-label="Emblem resmi UNSIKA TechFest 2026"
-                      >
-                        <rect width="56" height="56" rx="8" fill="#1E3A5F" />
-                        <path d="M14 16H42V22H31V42H25V22H14V16Z" fill="#FFFFFF" />
-                        <rect x="35" y="31" width="9" height="9" rx="2" fill="#EAB308" />
-                      </svg>
-                      <div>
-                        <div class="fw-bold fs-5">UNSIKA TechFest</div>
-                        <div class="text-body-secondary small">
-                          3 Track Utama · 6 Pembicara · 350 Kursi
-                        </div>
-                      </div>
-                    </div>
+              <!-- Social Proof Avatar Stack -->
+              <div class="d-flex align-items-center gap-3">
+                <div class="tf-avatar-stack" aria-hidden="true">
+                  <span class="tf-avatar-chip" style="background: #6366f1;">NK</span>
+                  <span class="tf-avatar-chip" style="background: #8b5cf6;">BP</span>
+                  <span class="tf-avatar-chip" style="background: #2563eb;">DR</span>
+                  <span class="tf-avatar-chip" style="background: #06b6d4;">SM</span>
+                </div>
+                <div>
+                  <div class="fw-bold font-display">1.2k+</div>
+                  <div class="small text-body-secondary">Alumni &amp; Peserta Aktif</div>
+                </div>
+              </div>
+            </div>
 
-                    <div class="row g-2 text-start border-top pt-3">
-                      <div class="col-4">
-                        <div class="small text-body-secondary">Hari 1</div>
-                        <div class="fw-bold">Keynote</div>
-                      </div>
-                      <div class="col-4">
-                        <div class="small text-body-secondary">Hari 2</div>
-                        <div class="fw-bold">Workshop</div>
-                      </div>
-                      <div class="col-4">
-                        <div class="small text-body-secondary">Tiket</div>
-                        <div class="fw-bold">Gratis</div>
-                      </div>
+            <!-- Hero Featured 3D Artwork Card (Matches Reference Right Card) -->
+            <div class="col-lg-5">
+              <div class="tf-featured-card rounded-4 overflow-hidden">
+                <img
+                  src="assets/img/hero-art.jpg"
+                  class="img-fluid w-100 tf-hero-art-img"
+                  alt="Karya 3D futuristik UNSIKA TechFest 2026"
+                />
+                <div class="tf-hero-overlay p-3 p-sm-4">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-6">
+                      <div class="small opacity-75">Early Bird Berakhir</div>
+                      <div class="fw-bold fs-5 font-display mb-2">10 Des 2026</div>
+                      <a
+                        href="#register"
+                        class="btn btn-tf-gradient btn-sm rounded-pill w-100 tf-touch-target"
+                      >
+                        Daftar
+                      </a>
+                    </div>
+                    <div class="col-6">
+                      <div class="small opacity-75">Kuota Tersisa</div>
+                      <div class="fw-bold fs-5 font-display mb-2">69 Kursi</div>
+                      <a
+                        href="#highlights"
+                        class="btn btn-tf-glass btn-sm rounded-pill w-100 text-white tf-touch-target"
+                      >
+                        Detail
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -317,158 +344,174 @@
         </div>
       </section>
 
-      <!-- Highlights, Carousel, Quota Progress & Benefits (Modul 5.4, 5.5, 5.6, 5.8) -->
-      <section id="highlights" class="py-5 tf-section-divider">
+      <!-- Partner & Tech Stack Strip (Matches Reference Band) -->
+      <section class="tf-partner-strip py-3" aria-label="Ekosistem dan mitra acara">
         <div class="container">
-          <div class="mb-4">
-            <h2 class="h3 fw-bold mb-1">Highlight &amp; Kuota Track</h2>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-4 text-body-secondary fw-semibold small">
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-mortarboard-fill text-info" aria-hidden="true"></i>
+              FASILKOM UNSIKA
+            </span>
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-cpu-fill text-info" aria-hidden="true"></i>
+              HMTI UNSIKA
+            </span>
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-bootstrap-fill text-info" aria-hidden="true"></i>
+              BOOTSTRAP 5.3
+            </span>
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-github text-info" aria-hidden="true"></i>
+              GITHUB PAGES
+            </span>
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-code-slash text-info" aria-hidden="true"></i>
+              KARAWANG DEV
+            </span>
+            <span class="d-inline-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-info" aria-hidden="true"></i>
+              OPEN SOURCE ID
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights Showcase Carousel, Quota Progress & Benefits (Modul 5.4, 5.5, 5.6, 5.8) -->
+      <section id="highlights" class="py-5">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h2 class="h2 fw-bold mb-2">Sesi Populer Tahun Ini</h2>
             <p class="text-body-secondary mb-0">
-              Sorotan sesi utama, ketersediaan kursi per jalur workshop, dan fasilitas peserta.
+              Sorotan sesi utama, okupansi kursi per track workshop, dan fasilitas peserta.
             </p>
           </div>
 
-          <div class="row g-4 align-items-stretch">
-            <div class="col-lg-7">
-              <div
-                id="eventCarousel"
-                class="carousel slide tf-surface rounded-3 overflow-hidden h-100"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-indicators mb-2">
-                  <button
-                    type="button"
-                    data-bs-target="#eventCarousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1: Keynote Web Architecture"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#eventCarousel"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2: Hands-on Workshop"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#eventCarousel"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3: Demo Day &amp; Networking"
-                  ></button>
-                </div>
+          <div
+            id="eventCarousel"
+            class="carousel slide tf-glass rounded-4 overflow-hidden mb-4"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators mb-2">
+              <button
+                type="button"
+                data-bs-target="#eventCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1: Keynote Web Architecture"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#eventCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2: AI Engineering & Cloud"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#eventCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3: Cyber Security & AppSec"
+              ></button>
+            </div>
 
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active p-4 p-md-5">
-                    <div class="row align-items-center g-4">
-                      <div class="col-md-5">
-                        <svg
-                          viewBox="0 0 240 160"
-                          class="img-fluid rounded-2 border w-100"
-                          role="img"
-                          aria-label="Ilustrasi arsitektur web modern"
-                        >
-                          <rect width="240" height="160" fill="#1E3A5F" />
-                          <rect x="20" y="24" width="200" height="24" rx="4" fill="#2563EB" />
-                          <rect x="20" y="60" width="92" height="76" rx="4" fill="#0F172A" />
-                          <rect x="124" y="60" width="96" height="34" rx="4" fill="#EAB308" />
-                          <rect x="124" y="102" width="96" height="34" rx="4" fill="#F8FAFC" />
-                        </svg>
-                      </div>
-                      <div class="col-md-7">
-                        <span class="badge text-bg-primary mb-2">Keynote · Hari 1</span>
-                        <h3 class="h4 fw-bold mb-2">Arsitektur Web Skala Produksi</h3>
-                        <p class="text-body-secondary mb-0">
-                          Membahas Core Web Vitals, desain sistem lintas tim, dan strategi rendering
-                          modern langsung dari principal engineer industri.
-                        </p>
-                      </div>
-                    </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img
+                      src="assets/img/track-web.jpg"
+                      class="img-fluid rounded-3 w-100 tf-carousel-img border"
+                      alt="Visual 3D track Web Modern dan UI Engineering"
+                    />
                   </div>
-
-                  <div class="carousel-item p-4 p-md-5">
-                    <div class="row align-items-center g-4">
-                      <div class="col-md-5">
-                        <svg
-                          viewBox="0 0 240 160"
-                          class="img-fluid rounded-2 border w-100"
-                          role="img"
-                          aria-label="Ilustrasi kolaborasi Git dan Bootstrap"
-                        >
-                          <rect width="240" height="160" fill="#0F172A" />
-                          <circle cx="64" cy="80" r="14" fill="#EAB308" />
-                          <circle cx="120" cy="48" r="14" fill="#2563EB" />
-                          <circle cx="120" cy="112" r="14" fill="#F8FAFC" />
-                          <circle cx="176" cy="80" r="14" fill="#EAB308" />
-                          <path
-                            d="M78 74 L106 54 M78 86 L106 106 M134 54 L162 74 M134 106 L162 86"
-                            stroke="#94A3B8"
-                            stroke-width="3"
-                          />
-                        </svg>
-                      </div>
-                      <div class="col-md-7">
-                        <span class="badge text-bg-warning mb-2">Workshop · Hari 2</span>
-                        <h3 class="h4 fw-bold mb-2">Hands-on Bootstrap 5 &amp; Git Flow</h3>
-                        <p class="text-body-secondary mb-0">
-                          Praktik langsung membangun antarmuka responsif, Pull Request review, serta
-                          otomasi deployment statis ke GitHub Pages.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item p-4 p-md-5">
-                    <div class="row align-items-center g-4">
-                      <div class="col-md-5">
-                        <svg
-                          viewBox="0 0 240 160"
-                          class="img-fluid rounded-2 border w-100"
-                          role="img"
-                          aria-label="Ilustrasi Demo Day dan Networking"
-                        >
-                          <rect width="240" height="160" fill="#131E31" />
-                          <rect x="28" y="34" width="184" height="92" rx="6" fill="#1E3A5F" />
-                          <rect x="44" y="52" width="68" height="12" rx="2" fill="#EAB308" />
-                          <rect x="44" y="74" width="152" height="10" rx="2" fill="#CBD5E1" />
-                          <rect x="44" y="92" width="118" height="10" rx="2" fill="#94A3B8" />
-                        </svg>
-                      </div>
-                      <div class="col-md-7">
-                        <span class="badge text-bg-success mb-2">Demo Day · Hari 2</span>
-                        <h3 class="h4 fw-bold mb-2">Bedah Portofolio &amp; Networking</h3>
-                        <p class="text-body-secondary mb-0">
-                          Presentasi proyek mahasiswa Fasilkom UNSIKA di hadapan mentor, lengkap
-                          dengan sesi umpan balik kode dan jejaring karier lokal.
-                        </p>
-                      </div>
+                  <div class="col-md-6">
+                    <span class="badge rounded-pill text-bg-primary mb-2">Keynote · Hari 1</span>
+                    <h3 class="h3 fw-bold mb-2">Arsitektur Web Skala Produksi</h3>
+                    <p class="text-body-secondary mb-3">
+                      Membahas Core Web Vitals, sistem token CSS berlapis, dan kolaborasi Bootstrap
+                      5.3 dengan Git Flow bersama praktisi industri.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 small fw-semibold">
+                      <span><i class="bi bi-person me-1 text-info" aria-hidden="true"></i>Nadia Kusuma</span>
+                      <span><i class="bi bi-people me-1 text-info" aria-hidden="true"></i>82 / 100 Kursi</span>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#eventCarousel"
-                  data-bs-slide="prev"
-                  aria-label="Slide sebelumnya"
-                >
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#eventCarousel"
-                  data-bs-slide="next"
-                  aria-label="Slide berikutnya"
-                >
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
+              <div class="carousel-item p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img
+                      src="assets/img/track-ai.jpg"
+                      class="img-fluid rounded-3 w-100 tf-carousel-img border"
+                      alt="Visual 3D track AI Engineering dan Cloud"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <span class="badge rounded-pill text-bg-info mb-2">Pleno &amp; Workshop · Hari 1–2</span>
+                    <h3 class="h3 fw-bold mb-2">AI Engineering &amp; Rilis Git Profesional</h3>
+                    <p class="text-body-secondary mb-3">
+                      Evaluasi latensi RAG pada aplikasi kampus serta otomasi rilis tag dan Pull
+                      Request review terstruktur di GitHub.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 small fw-semibold">
+                      <span><i class="bi bi-person me-1 text-info" aria-hidden="true"></i>Dr. Rahmawati &amp; Dimas</span>
+                      <span><i class="bi bi-people me-1 text-info" aria-hidden="true"></i>85 / 125 Kursi</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img
+                      src="assets/img/track-security.jpg"
+                      class="img-fluid rounded-3 w-100 tf-carousel-img border"
+                      alt="Visual 3D track Cyber Security dan AppSec"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <span class="badge rounded-pill text-bg-danger mb-2">AppSec · Hari 1–2</span>
+                    <h3 class="h3 fw-bold mb-2">Keamanan Form Web, SRI &amp; Supply Chain</h3>
+                    <p class="text-body-secondary mb-3">
+                      Studi kasus mitigasi XSS, validasi input aman, verifikasi Subresource
+                      Integrity pada CDN, serta audit secret di repositori.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 small fw-semibold">
+                      <span><i class="bi bi-person me-1 text-info" aria-hidden="true"></i>Farhan &amp; Sinta</span>
+                      <span><i class="bi bi-people me-1 text-info" aria-hidden="true"></i>114 / 125 Kursi</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="col-lg-5 d-flex flex-column gap-4">
-              <!-- Quota Progress Bars (Modul 5.5) -->
-              <div class="tf-surface rounded-3 p-4">
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#eventCarousel"
+              data-bs-slide="prev"
+              aria-label="Slide sebelumnya"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#eventCarousel"
+              data-bs-slide="next"
+              aria-label="Slide berikutnya"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="row g-4">
+            <!-- Quota Progress Bars (Modul 5.5) -->
+            <div class="col-lg-6">
+              <div class="tf-glass rounded-4 p-4 h-100">
                 <h3 class="h5 fw-bold mb-3">Okupansi Kursi per Track</h3>
 
                 <div class="mb-3">
@@ -483,9 +526,9 @@
                     aria-valuenow="82"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="height: 0.75rem;"
+                    style="height: 0.7rem;"
                   >
-                    <div class="progress-bar bg-primary" style="width: 82%"></div>
+                    <div class="progress-bar" style="width: 82%; background: var(--tf-grad-primary);"></div>
                   </div>
                 </div>
 
@@ -501,9 +544,9 @@
                     aria-valuenow="68"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="height: 0.75rem;"
+                    style="height: 0.7rem;"
                   >
-                    <div class="progress-bar bg-warning" style="width: 68%"></div>
+                    <div class="progress-bar bg-info" style="width: 68%;"></div>
                   </div>
                 </div>
 
@@ -519,31 +562,33 @@
                     aria-valuenow="91"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="height: 0.75rem;"
+                    style="height: 0.7rem;"
                   >
-                    <div class="progress-bar bg-danger" style="width: 91%"></div>
+                    <div class="progress-bar bg-danger" style="width: 91%;"></div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Participant Benefits List Group (Modul 5.6) -->
-              <div class="tf-surface rounded-3 p-4 flex-grow-1">
+            <!-- Participant Benefits List Group (Modul 5.6) -->
+            <div class="col-lg-6">
+              <div class="tf-glass rounded-4 p-4 h-100">
                 <h3 class="h5 fw-bold mb-3">Benefit Peserta Terdaftar</h3>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
-                    <i class="bi bi-patch-check-fill text-primary" aria-hidden="true"></i>
+                    <i class="bi bi-patch-check-fill text-info" aria-hidden="true"></i>
                     <span>E-Sertifikat resmi Fasilkom UNSIKA (12 JP)</span>
                   </li>
                   <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
-                    <i class="bi bi-git text-primary" aria-hidden="true"></i>
+                    <i class="bi bi-git text-info" aria-hidden="true"></i>
                     <span>Akses repositori starter dan slide materi</span>
                   </li>
                   <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
-                    <i class="bi bi-code-square text-primary" aria-hidden="true"></i>
+                    <i class="bi bi-code-square text-info" aria-hidden="true"></i>
                     <span>Sesi code review &amp; klinik portofolio langsung</span>
                   </li>
                   <li class="list-group-item px-0 d-flex align-items-center gap-2 bg-transparent">
-                    <i class="bi bi-people-fill text-primary" aria-hidden="true"></i>
+                    <i class="bi bi-people-fill text-info" aria-hidden="true"></i>
                     <span>Networking komunitas developer Karawang &amp; Bekasi</span>
                   </li>
                 </ul>
@@ -553,19 +598,14 @@
         </div>
       </section>
 
-      <!-- Speakers Grid with Filter Button Group, Tooltip, Popover & Modal (Modul 5.2, 5.5, 5.7, 5.8) -->
-      <section id="speakers" class="py-5 tf-section-divider">
+      <!-- Speakers Grid (Echoing Top Sellers + Filter Button Group, Tooltip, Popover & Modal) -->
+      <section id="speakers" class="py-5">
         <div class="container">
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4"
-          >
-            <div>
-              <h2 class="h3 fw-bold mb-1">Pembicara &amp; Mentor</h2>
-              <p class="text-body-secondary mb-0">
-                Praktisi industri dan akademisi yang berbagi studi kasus nyata.
-              </p>
-            </div>
-
+          <div class="text-center mb-4">
+            <h2 class="h2 fw-bold mb-2">Pembicara &amp; Mentor</h2>
+            <p class="text-body-secondary mb-3">
+              Praktisi industri dan akademisi yang berbagi studi kasus nyata.
+            </p>
             <div
               class="btn-group flex-wrap"
               role="group"
@@ -610,8 +650,8 @@
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="speakersGrid">
             <!-- Speaker 1 -->
             <div class="col" data-speaker-card data-category="web">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -620,9 +660,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Nadia Kusuma"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#1E3A5F" />
+                        <rect width="48" height="48" rx="10" fill="#4f46e5" />
                         <text
                           x="50%"
                           y="54%"
@@ -636,7 +676,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-primary mb-1">Web Modern</span>
+                        <span class="badge rounded-pill text-bg-primary mb-1">Web Modern</span>
                         <h3 class="h5 card-title fw-bold mb-0">Nadia Kusuma</h3>
                       </div>
                     </div>
@@ -660,7 +700,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Nadia Kusuma"
@@ -674,7 +714,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -690,8 +730,8 @@
 
             <!-- Speaker 2 -->
             <div class="col" data-speaker-card data-category="web">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -700,9 +740,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Bagas Pratama"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#2563EB" />
+                        <rect width="48" height="48" rx="10" fill="#2563eb" />
                         <text
                           x="50%"
                           y="54%"
@@ -716,7 +756,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-primary mb-1">Web Modern</span>
+                        <span class="badge rounded-pill text-bg-primary mb-1">Web Modern</span>
                         <h3 class="h5 card-title fw-bold mb-0">Bagas Pratama</h3>
                       </div>
                     </div>
@@ -740,7 +780,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Bagas Pratama"
@@ -754,7 +794,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -770,8 +810,8 @@
 
             <!-- Speaker 3 -->
             <div class="col" data-speaker-card data-category="ai-cloud">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -780,9 +820,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Dr. Rahmawati"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#A16207" />
+                        <rect width="48" height="48" rx="10" fill="#7c3aed" />
                         <text
                           x="50%"
                           y="54%"
@@ -796,7 +836,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-warning mb-1">AI &amp; Cloud</span>
+                        <span class="badge rounded-pill text-bg-info mb-1">AI &amp; Cloud</span>
                         <h3 class="h5 card-title fw-bold mb-0">Dr. Rahmawati</h3>
                       </div>
                     </div>
@@ -820,7 +860,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Dr. Rahmawati"
@@ -834,7 +874,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -850,8 +890,8 @@
 
             <!-- Speaker 4 -->
             <div class="col" data-speaker-card data-category="ai-cloud">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -860,9 +900,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Dimas Nugroho"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#334155" />
+                        <rect width="48" height="48" rx="10" fill="#0284c7" />
                         <text
                           x="50%"
                           y="54%"
@@ -876,7 +916,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-warning mb-1">AI &amp; Cloud</span>
+                        <span class="badge rounded-pill text-bg-info mb-1">AI &amp; Cloud</span>
                         <h3 class="h5 card-title fw-bold mb-0">Dimas Nugroho</h3>
                       </div>
                     </div>
@@ -900,7 +940,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Dimas Nugroho"
@@ -914,7 +954,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -930,8 +970,8 @@
 
             <!-- Speaker 5 -->
             <div class="col" data-speaker-card data-category="security">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -940,9 +980,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Farhan Hakim"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#991B1B" />
+                        <rect width="48" height="48" rx="10" fill="#be185d" />
                         <text
                           x="50%"
                           y="54%"
@@ -956,7 +996,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-danger mb-1">Cyber Security</span>
+                        <span class="badge rounded-pill text-bg-danger mb-1">Cyber Security</span>
                         <h3 class="h5 card-title fw-bold mb-0">Farhan Hakim</h3>
                       </div>
                     </div>
@@ -980,7 +1020,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Farhan Hakim"
@@ -994,7 +1034,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -1010,8 +1050,8 @@
 
             <!-- Speaker 6 -->
             <div class="col" data-speaker-card data-category="security">
-              <article class="card h-100 tf-card-interactive">
-                <div class="card-body d-flex flex-column">
+              <article class="card h-100 rounded-4 tf-glass-interactive">
+                <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="d-flex align-items-center gap-3">
                       <svg
@@ -1020,9 +1060,9 @@
                         viewBox="0 0 48 48"
                         role="img"
                         aria-label="Inisial Sinta Maharani"
-                        class="rounded-2 flex-shrink-0"
+                        class="rounded-3 flex-shrink-0"
                       >
-                        <rect width="48" height="48" rx="8" fill="#0F172A" />
+                        <rect width="48" height="48" rx="10" fill="#0f766e" />
                         <text
                           x="50%"
                           y="54%"
@@ -1036,7 +1076,7 @@
                         </text>
                       </svg>
                       <div>
-                        <span class="badge text-bg-danger mb-1">Cyber Security</span>
+                        <span class="badge rounded-pill text-bg-danger mb-1">Cyber Security</span>
                         <h3 class="h5 card-title fw-bold mb-0">Sinta Maharani</h3>
                       </div>
                     </div>
@@ -1060,7 +1100,7 @@
                   <div class="mt-auto d-flex gap-2">
                     <button
                       type="button"
-                      class="btn btn-primary btn-sm flex-grow-1 tf-touch-target"
+                      class="btn btn-tf-gradient btn-sm rounded-pill flex-grow-1 tf-touch-target"
                       data-bs-toggle="modal"
                       data-bs-target="#speakerModal"
                       data-speaker-name="Sinta Maharani"
@@ -1074,7 +1114,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-outline-secondary btn-sm tf-touch-target"
+                      class="btn btn-tf-glass btn-sm rounded-pill tf-touch-target px-3"
                       data-bs-toggle="popover"
                       data-bs-trigger="focus"
                       data-bs-title="Prasyarat Sesi"
@@ -1091,24 +1131,88 @@
         </div>
       </section>
 
-      <!-- Responsive Schedule Table & Day Pagination (Modul 5.3, 5.6) -->
-      <section id="schedule" class="py-5 tf-section-divider">
+      <!-- Explore Tracks Visual Cards + Responsive Schedule Table & Pagination (Modul 5.3, 5.6) -->
+      <section id="schedule" class="py-5">
         <div class="container">
+          <div class="text-center mb-4">
+            <h2 class="h2 fw-bold mb-2">Eksplorasi Track &amp; Jadwal</h2>
+            <p class="text-body-secondary mb-0">
+              Pilih jalur workshop yang sesuai minat dan lihat susunan agenda dua hari.
+            </p>
+          </div>
+
+          <!-- 3 Visual Track Showcase Cards (Echoing Reference "Explore Artworks") -->
+          <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            <div class="col">
+              <div class="card h-100 rounded-4 overflow-hidden tf-glass-interactive">
+                <img
+                  src="assets/img/track-web.jpg"
+                  class="card-img-top tf-track-thumb"
+                  alt="Track Web Modern dan UI Engineering"
+                />
+                <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-0">Web Modern</h3>
+                    <small class="text-body-secondary">Bootstrap 5.3 &amp; Design Tokens</small>
+                  </div>
+                  <span class="badge rounded-pill text-bg-primary">100 Kursi</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 rounded-4 overflow-hidden tf-glass-interactive">
+                <img
+                  src="assets/img/track-ai.jpg"
+                  class="card-img-top tf-track-thumb"
+                  alt="Track AI Engineering dan Cloud"
+                />
+                <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-0">AI &amp; Cloud</h3>
+                    <small class="text-body-secondary">LLM App &amp; Git Workflow</small>
+                  </div>
+                  <span class="badge rounded-pill text-bg-info">125 Kursi</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 rounded-4 overflow-hidden tf-glass-interactive">
+                <img
+                  src="assets/img/track-security.jpg"
+                  class="card-img-top tf-track-thumb"
+                  alt="Track Cyber Security dan AppSec"
+                />
+                <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-0">Cyber Security</h3>
+                    <small class="text-body-secondary">AppSec &amp; Supply Chain</small>
+                  </div>
+                  <span class="badge rounded-pill text-bg-danger">125 Kursi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
-            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4"
+            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-3"
           >
             <div>
-              <h2 class="h3 fw-bold mb-1">Jadwal Acara</h2>
+              <h3 class="h4 fw-bold mb-1">Agenda Sesi</h3>
               <p id="scheduleDayLabel" class="text-body-secondary mb-0">
                 Hari 1 (19 Desember 2026) — Seminar Utama &amp; Keynote
               </p>
             </div>
 
             <nav aria-label="Navigasi hari acara">
-              <ul class="pagination mb-0 flex-wrap" id="schedulePagination">
+              <ul class="pagination mb-0" id="schedulePagination">
                 <li class="page-item disabled" data-page-prev>
-                  <button type="button" class="page-link tf-touch-target text-nowrap" aria-label="Hari sebelumnya">
-                    Sebelumnya
+                  <button
+                    type="button"
+                    class="page-link tf-touch-target text-nowrap"
+                    aria-label="Hari sebelumnya"
+                  >
+                    <span class="d-none d-sm-inline">Sebelumnya</span>
+                    <i class="bi bi-chevron-left d-sm-none" aria-hidden="true"></i>
                   </button>
                 </li>
                 <li class="page-item active" aria-current="page" data-page="1">
@@ -1118,15 +1222,20 @@
                   <button type="button" class="page-link tf-touch-target text-nowrap">Hari 2</button>
                 </li>
                 <li class="page-item" data-page-next>
-                  <button type="button" class="page-link tf-touch-target text-nowrap" aria-label="Hari berikutnya">
-                    Berikutnya
+                  <button
+                    type="button"
+                    class="page-link tf-touch-target text-nowrap"
+                    aria-label="Hari berikutnya"
+                  >
+                    <span class="d-none d-sm-inline">Berikutnya</span>
+                    <i class="bi bi-chevron-right d-sm-none" aria-hidden="true"></i>
                   </button>
                 </li>
               </ul>
             </nav>
           </div>
 
-          <div class="tf-surface rounded-3 overflow-hidden">
+          <div class="tf-glass rounded-4 overflow-hidden">
             <div class="table-responsive">
               <table class="table table-striped table-hover table-bordered align-middle mb-0">
                 <thead class="table-dark">
@@ -1158,7 +1267,7 @@
                     <td class="fw-semibold">Integrasi LLM ke Aplikasi Web Kampus</td>
                     <td>Dr. Rahmawati</td>
                     <td>Auditorium Utama</td>
-                    <td><span class="badge text-bg-warning">AI &amp; Cloud</span></td>
+                    <td><span class="badge text-bg-info">AI &amp; Cloud</span></td>
                   </tr>
                   <tr>
                     <td class="font-mono-code text-nowrap">13.30 – 14.30</td>
@@ -1175,10 +1284,10 @@
       </section>
 
       <!-- FAQ Accordion (Modul 5.7) -->
-      <section id="faq" class="py-5 tf-section-divider">
+      <section id="faq" class="py-5">
         <div class="container">
-          <div class="mb-4">
-            <h2 class="h3 fw-bold mb-1">Pertanyaan Umum</h2>
+          <div class="text-center mb-4">
+            <h2 class="h2 fw-bold mb-2">Pertanyaan Umum</h2>
             <p class="text-body-secondary mb-0">
               Informasi teknis terkait kepesertaan, perlengkapan workshop, dan e-sertifikat.
             </p>
@@ -1279,20 +1388,34 @@
         </div>
       </section>
 
-      <!-- Registration Form & Live Conference Pass Preview (Modul 5.6, 5.8, 5.10-5.12) -->
-      <section id="register" class="py-5 tf-section-divider">
+      <!-- Curved CTA Banner + Registration Form & Live Pass (Modul 5.6, 5.8, 5.10-5.12) -->
+      <section id="register" class="py-5">
         <div class="container">
-          <div class="mb-4">
-            <h2 class="h3 fw-bold mb-1">Pendaftaran Peserta</h2>
-            <p class="text-body-secondary mb-0">
-              Lengkapi formulir di bawah untuk mendapatkan tiket gratis. Kartu akses di samping
-              otomatis terisi mengikuti data Anda.
+          <!-- Curved Gradient CTA Banner (Echoing Reference Banner) -->
+          <div class="tf-curved-banner p-4 p-md-5 text-center mb-5">
+            <h2 class="h2 fw-bold mb-2">
+              Bergabung &amp; Bangun Karya Web di UNSIKA TechFest 2026
+            </h2>
+            <p class="opacity-75 mb-4 mx-auto" style="max-width: 54ch;">
+              Amankan kursi workshop pilihan Anda sebelum kuota Early Bird ditutup dan langsung
+              terhubung dengan komunitas pengembang Karawang.
             </p>
+            <a
+              href="#registrationForm"
+              class="btn btn-light text-dark fw-semibold rounded-pill tf-touch-target px-4"
+            >
+              Isi Formulir Pendaftaran
+            </a>
           </div>
 
-          <div class="row g-4 align-items-start">
+          <div class="row g-4">
             <div class="col-lg-7">
-              <div class="tf-surface rounded-3 p-4 p-md-5">
+              <div class="tf-glass rounded-4 p-4 p-md-5">
+                <h3 class="h4 fw-bold mb-1">Formulir Pendaftaran Peserta</h3>
+                <p class="text-body-secondary small mb-4">
+                  Kartu akses di samping otomatis diperbarui saat Anda mengisi data.
+                </p>
+
                 <form id="registrationForm" class="needs-validation" novalidate>
                   <!-- Floating Labels (Modul 5.12) -->
                   <div class="form-floating mb-3">
@@ -1426,7 +1549,9 @@
                       <label for="regLevel" class="form-label fw-semibold mb-0">
                         Tingkat Pengalaman Web
                       </label>
-                      <span id="regLevelBadge" class="badge text-bg-secondary">Level 2: Dasar</span>
+                      <span id="regLevelBadge" class="badge rounded-pill text-bg-secondary">
+                        Level 2: Dasar
+                      </span>
                     </div>
                     <input
                       type="range"
@@ -1482,7 +1607,7 @@
                     <button
                       type="submit"
                       id="regSubmitBtn"
-                      class="btn btn-accent btn-lg tf-touch-target"
+                      class="btn btn-tf-gradient btn-lg rounded-pill tf-touch-target"
                     >
                       <span
                         id="regSpinner"
@@ -1501,7 +1626,7 @@
             <div class="col-lg-5">
               <aside
                 id="livePass"
-                class="tf-hero-card rounded-3 overflow-hidden shadow-sm sticky-lg-top tf-sticky-pass"
+                class="tf-hero-card rounded-4 overflow-hidden sticky-lg-top tf-sticky-pass"
                 aria-label="Pratinjau Kartu Akses Konferensi"
               >
                 <div class="tf-pass-strip px-4 py-3 d-flex justify-content-between align-items-center gap-2 flex-wrap">
@@ -1517,7 +1642,7 @@
                         @username
                       </div>
                     </div>
-                    <span id="passTrack" class="badge text-bg-primary flex-shrink-0">
+                    <span id="passTrack" class="badge rounded-pill text-bg-primary flex-shrink-0">
                       Belum dipilih
                     </span>
                   </div>
@@ -1537,8 +1662,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="px-4 py-2 tf-surface-subtle border-0 border-top small text-body-secondary">
-                  <i class="bi bi-qr-code me-2" aria-hidden="true"></i>
+                <div class="px-4 py-3 border-top small text-body-secondary">
+                  <i class="bi bi-qr-code me-2 text-info" aria-hidden="true"></i>
                   Tunjukkan kode tiket ini saat check-in di meja registrasi.
                 </div>
               </aside>
@@ -1548,32 +1673,72 @@
       </section>
     </main>
 
-    <!-- Semantic Footer -->
-    <footer id="lokasi" class="py-5 tf-section-divider tf-surface">
+    <!-- Semantic Footer (Matches Reference Multi-Column Layout) -->
+    <footer id="lokasi" class="py-5 border-top tf-glass">
       <div class="container">
         <div class="row g-4 align-items-start">
-          <div class="col-md-6">
-            <h2 class="h5 fw-bold mb-2">UNSIKA TechFest 2026</h2>
-            <p class="text-body-secondary mb-2" style="max-width: 48ch;">
-              Diselenggarakan oleh Program Studi Informatika, Fakultas Ilmu Komputer, Universitas
+          <div class="col-lg-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="fw-bold font-display fs-5">UNSIKA</span>
+              <span class="tf-brand-pill">TECHFEST</span>
+            </div>
+            <p class="small text-body-secondary mb-3" style="max-width: 40ch;">
+              Konferensi dan workshop rekayasa web tahunan Fakultas Ilmu Komputer, Universitas
               Singaperbangsa Karawang.
             </p>
-            <p class="small text-body-secondary mb-0">
-              <i class="bi bi-geo-alt me-1" aria-hidden="true"></i>
-              Jl. HS. Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang 41361
+            <p class="small text-body-secondary mb-3">
+              <i class="bi bi-geo-alt me-1 text-info" aria-hidden="true"></i>
+              Jl. HS. Ronggo Waluyo, Telukjambe Timur, Karawang 41361
             </p>
+            <div class="d-flex gap-2">
+              <a
+                href="https://github.com/Brain-Super-RY/praktikum-pbw-m5"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-tf-glass btn-sm rounded-circle tf-touch-target"
+                aria-label="Repositori GitHub"
+              >
+                <i class="bi bi-github" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#register"
+                class="btn btn-tf-glass btn-sm rounded-circle tf-touch-target"
+                aria-label="Registrasi Tiket"
+              >
+                <i class="bi bi-ticket-perforated" aria-hidden="true"></i>
+              </a>
+              <a
+                href="mailto:techfest@fasilkom.unsika.ac.id"
+                class="btn btn-tf-glass btn-sm rounded-circle tf-touch-target"
+                aria-label="Email Panitia"
+              >
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
-          <div class="col-md-3">
-            <h3 class="h6 fw-bold mb-2">Navigasi</h3>
-            <ul class="list-unstyled d-grid gap-1 mb-0">
+
+          <div class="col-6 col-md-4 col-lg-2 ms-lg-auto">
+            <h2 class="h6 fw-bold mb-3">Navigasi</h2>
+            <ul class="list-unstyled d-grid gap-2 small mb-0">
               <li><a class="link-body-emphasis text-decoration-none" href="#beranda">Beranda</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#highlights">Highlight</a></li>
               <li><a class="link-body-emphasis text-decoration-none" href="#speakers">Pembicara</a></li>
               <li><a class="link-body-emphasis text-decoration-none" href="#schedule">Jadwal</a></li>
-              <li><a class="link-body-emphasis text-decoration-none" href="#register">Daftar</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h3 class="h6 fw-bold mb-2">Kontak Panitia</h3>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <h2 class="h6 fw-bold mb-3">Track Workshop</h2>
+            <ul class="list-unstyled d-grid gap-2 small mb-0">
+              <li><a class="link-body-emphasis text-decoration-none" href="#schedule">Web Modern</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#schedule">AI &amp; Cloud</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#schedule">Cyber Security</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#faq">FAQ Peserta</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3">
+            <h2 class="h6 fw-bold mb-3">Kontak Panitia</h2>
             <p class="small text-body-secondary mb-1">techfest@fasilkom.unsika.ac.id</p>
             <p class="small text-body-secondary mb-0">&copy; 2026 Fasilkom UNSIKA</p>
           </div>
@@ -1590,10 +1755,10 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content tf-glass">
           <div class="modal-header">
             <div>
-              <span id="speakerModalTrack" class="badge text-bg-primary mb-1">Track</span>
+              <span id="speakerModalTrack" class="badge rounded-pill text-bg-primary mb-1">Track</span>
               <h2 class="modal-title fs-5 fw-bold mb-0" id="speakerModalName">Nama Pembicara</h2>
             </div>
             <button
@@ -1607,16 +1772,24 @@
             <p id="speakerModalRole" class="small text-body-secondary fw-semibold mb-2"></p>
             <h3 id="speakerModalTopic" class="h6 fw-bold mb-2"></h3>
             <p class="small font-mono-code text-body-secondary mb-3">
-              <i class="bi bi-clock me-1" aria-hidden="true"></i>
+              <i class="bi bi-clock me-1 text-info" aria-hidden="true"></i>
               <span id="speakerModalTime"></span>
             </p>
             <p id="speakerModalAbstract" class="mb-0"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary tf-touch-target" data-bs-dismiss="modal">
+            <button
+              type="button"
+              class="btn btn-tf-glass rounded-pill tf-touch-target px-3"
+              data-bs-dismiss="modal"
+            >
               Tutup
             </button>
-            <a href="#register" class="btn btn-accent tf-touch-target" data-bs-dismiss="modal">
+            <a
+              href="#register"
+              class="btn btn-tf-gradient rounded-pill tf-touch-target px-4"
+              data-bs-dismiss="modal"
+            >
               Ambil Tiket Sesi Ini
             </a>
           </div>
