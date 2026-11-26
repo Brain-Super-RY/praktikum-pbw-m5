@@ -13,7 +13,7 @@
           speaker: 'Panitia UNSIKA TechFest',
           room: 'Auditorium Utama',
           track: 'Umum',
-          badge: 'text-bg-secondary',
+          badge: 'tf-badge-mono',
         },
         {
           time: '09.30 – 10.30',
@@ -21,7 +21,7 @@
           speaker: 'Nadia Kusuma',
           room: 'Auditorium Utama',
           track: 'Web Modern',
-          badge: 'text-bg-primary',
+          badge: 'tf-badge-solid',
         },
         {
           time: '11.00 – 12.00',
@@ -29,7 +29,7 @@
           speaker: 'Dr. Rahmawati',
           room: 'Auditorium Utama',
           track: 'AI & Cloud',
-          badge: 'text-bg-warning',
+          badge: 'tf-badge-mono',
         },
         {
           time: '13.30 – 14.30',
@@ -37,7 +37,7 @@
           speaker: 'Farhan Hakim',
           room: 'Auditorium Utama',
           track: 'Cyber Security',
-          badge: 'text-bg-danger',
+          badge: 'tf-badge-mono',
         },
       ],
     },
@@ -50,7 +50,7 @@
           speaker: 'Bagas Pratama',
           room: 'Lab Informatika A',
           track: 'Web Modern',
-          badge: 'text-bg-primary',
+          badge: 'tf-badge-solid',
         },
         {
           time: '13.00 – 14.30',
@@ -58,7 +58,7 @@
           speaker: 'Dimas Nugroho',
           room: 'Lab Informatika B',
           track: 'AI & Cloud',
-          badge: 'text-bg-warning',
+          badge: 'tf-badge-mono',
         },
         {
           time: '15.00 – 16.00',
@@ -66,7 +66,7 @@
           speaker: 'Sinta Maharani',
           room: 'Auditorium Utama',
           track: 'Cyber Security',
-          badge: 'text-bg-danger',
+          badge: 'tf-badge-mono',
         },
         {
           time: '16.00 – 17.00',
@@ -74,7 +74,7 @@
           speaker: 'Dewan Mentor & Panitia',
           room: 'Auditorium Utama',
           track: 'Umum',
-          badge: 'text-bg-secondary',
+          badge: 'tf-badge-mono',
         },
       ],
     },
