@@ -1,0 +1,219 @@
+/* ==========================================================================
+   UNSIKA TechFest 2026 — Swiss Modernism 2.0 Design System
+   3-Layer Token Architecture: Primitive -> Semantic -> Bootstrap Overrides
+   ========================================================================== */
+
+:root {
+  /* Layer 1: Primitive Tokens */
+  --tf-navy-900: #1e3a5f;
+  --tf-navy-950: #0b1220;
+  --tf-navy-800: #131e31;
+  --tf-gold-700: #a16207;
+  --tf-gold-800: #854d0e;
+  --tf-gold-400: #eab308;
+  --tf-gold-300: #facc15;
+  --tf-blue-600: #2563eb;
+  --tf-slate-50: #f8fafc;
+  --tf-slate-100: #f1f5f9;
+  --tf-slate-200: #e2e8f0;
+  --tf-slate-300: #cbd5e1;
+  --tf-slate-600: #475569;
+  --tf-slate-700: #334155;
+  --tf-slate-900: #0f172a;
+  --tf-red-600: #dc2626;
+  --tf-white: #ffffff;
+
+  /* Layer 2: Semantic Tokens (Light) */
+  --tf-bg: var(--tf-slate-50);
+  --tf-surface: var(--tf-white);
+  --tf-surface-subtle: var(--tf-slate-100);
+  --tf-ink: var(--tf-slate-900);
+  --tf-muted: var(--tf-slate-600);
+  --tf-border: var(--tf-slate-300);
+  --tf-primary: var(--tf-navy-900);
+  --tf-primary-rgb: 30, 58, 95;
+  --tf-accent: var(--tf-gold-700);
+  --tf-accent-hover: var(--tf-gold-800);
+  --tf-accent-ink: var(--tf-white);
+  --tf-ring: rgba(37, 99, 235, 0.45);
+
+  /* Motion Tokens (Emil Kowalski timing & curves) */
+  --tf-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --tf-dur-fast: 150ms;
+  --tf-dur-base: 220ms;
+
+  /* Layer 3: Bootstrap --bs-* Overrides */
+  --bs-primary: var(--tf-primary);
+  --bs-primary-rgb: var(--tf-primary-rgb);
+  --bs-body-bg: var(--tf-bg);
+  --bs-body-color: var(--tf-ink);
+  --bs-border-color: var(--tf-border);
+  --bs-secondary-color: var(--tf-muted);
+  --bs-tertiary-bg: var(--tf-surface-subtle);
+  --bs-font-sans-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --bs-link-color: var(--tf-navy-900);
+  --bs-link-hover-color: var(--tf-blue-600);
+}
+
+[data-bs-theme='dark'] {
+  /* Layer 2: Semantic Tokens (Dark) */
+  --tf-bg: var(--tf-navy-950);
+  --tf-surface: var(--tf-navy-800);
+  --tf-surface-subtle: #19263d;
+  --tf-ink: var(--tf-slate-100);
+  --tf-muted: #94a3b8;
+  --tf-border: #26364f;
+  --tf-primary: #60a5fa;
+  --tf-primary-rgb: 96, 165, 250;
+  --tf-accent: var(--tf-gold-400);
+  --tf-accent-hover: var(--tf-gold-300);
+  --tf-accent-ink: var(--tf-slate-900);
+  --tf-ring: rgba(234, 179, 8, 0.55);
+
+  /* Layer 3: Bootstrap Dark Overrides */
+  --bs-primary: var(--tf-primary);
+  --bs-primary-rgb: var(--tf-primary-rgb);
+  --bs-body-bg: var(--tf-bg);
+  --bs-body-color: var(--tf-ink);
+  --bs-border-color: var(--tf-border);
+  --bs-secondary-color: var(--tf-muted);
+  --bs-tertiary-bg: var(--tf-surface-subtle);
+  --bs-link-color: #93c5fd;
+  --bs-link-hover-color: #bfdbfe;
+}
+
+/* Base & Scroll Offset */
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--tf-bg);
+  color: var(--tf-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Editorial Display Accent */
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.font-mono-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Accessible Focus Rings */
+:focus-visible {
+  outline: 2px solid var(--tf-accent);
+  outline-offset: 2px;
+}
+
+/* Swiss Grid Surfaces & Borders */
+.tf-navbar {
+  background-color: var(--tf-surface);
+  border-bottom: 1px solid var(--tf-border);
+  transition: background-color var(--tf-dur-base) var(--tf-ease-out),
+    border-color var(--tf-dur-base) var(--tf-ease-out);
+}
+
+.tf-surface {
+  background-color: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  transition: background-color var(--tf-dur-base) var(--tf-ease-out),
+    border-color var(--tf-dur-base) var(--tf-ease-out);
+}
+
+.tf-surface-subtle {
+  background-color: var(--tf-surface-subtle);
+  border: 1px solid var(--tf-border);
+}
+
+.tf-section-divider {
+  border-top: 1px solid var(--tf-border);
+}
+
+/* Touch Target & Button Styles */
+.tf-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-accent {
+  --bs-btn-color: var(--tf-accent-ink);
+  --bs-btn-bg: var(--tf-accent);
+  --bs-btn-border-color: var(--tf-accent);
+  --bs-btn-hover-color: var(--tf-accent-ink);
+  --bs-btn-hover-bg: var(--tf-accent-hover);
+  --bs-btn-hover-border-color: var(--tf-accent-hover);
+  --bs-btn-active-color: var(--tf-accent-ink);
+  --bs-btn-active-bg: var(--tf-accent-hover);
+  --bs-btn-active-border-color: var(--tf-accent-hover);
+  font-weight: 600;
+  transition: background-color var(--tf-dur-fast) var(--tf-ease-out),
+    border-color var(--tf-dur-fast) var(--tf-ease-out),
+    transform var(--tf-dur-fast) var(--tf-ease-out);
+}
+
+.btn-accent:active {
+  transform: translateY(1px);
+}
+
+/* Hero Architectural Grid Pattern */
+.tf-hero-grid {
+  background-image: linear-gradient(to right, var(--tf-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tf-border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: top left;
+}
+
+.tf-hero-card {
+  background-color: var(--tf-surface);
+  border: 2px solid var(--tf-ink);
+}
+
+.tf-pass-strip {
+  background-color: var(--tf-navy-900);
+  color: var(--tf-white);
+}
+
+[data-bs-theme='dark'] .tf-pass-strip {
+  background-color: var(--tf-surface-subtle);
+  border-bottom: 1px solid var(--tf-border);
+}
+
+/* Interactive Card Lift (Restrained) */
+.tf-card-interactive {
+  background-color: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  transition: border-color var(--tf-dur-fast) var(--tf-ease-out),
+    transform var(--tf-dur-fast) var(--tf-ease-out);
+}
+
+.tf-card-interactive:hover {
+  border-color: var(--tf-primary);
+  transform: translateY(-2px);
+}
+
+/* Navbar Active Link Indicator */
+.navbar-nav .nav-link.active {
+  color: var(--tf-accent);
+  font-weight: 600;
+}
+
+/* Reduced Motion Guard */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
