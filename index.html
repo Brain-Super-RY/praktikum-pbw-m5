@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="UNSIKA TechFest 2026 — Konferensi dan workshop teknologi tahunan Fakultas Ilmu Komputer, Universitas Singaperbangsa Karawang."
+    />
+    <title>UNSIKA TechFest 2026 — Fasilkom UNSIKA</title>
+
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3.8 CSS via jsDelivr CDN (Context7-verified SRI) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Design Tokens & Overrides -->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNavbar"
+    data-bs-smooth-scroll="true"
+    tabindex="0"
+  >
+    <!-- Skip Link for Keyboard Navigation -->
+    <a
+      href="#beranda"
+      class="visually-hidden-focusable position-fixed top-0 start-0 m-2 px-3 py-2 bg-body border rounded-2 z-3 fw-semibold"
+    >
+      Lewati ke konten utama
+    </a>
+
+    <!-- Sticky Navbar (Modul 5.7) -->
+    <header class="sticky-top tf-navbar">
+      <nav id="mainNavbar" class="navbar navbar-expand-lg" aria-label="Navigasi utama">
+        <div class="container">
+          <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#beranda">
+            <span
+              class="d-inline-flex align-items-center justify-content-center rounded-1 px-2 py-1 text-white"
+              style="background-color: var(--tf-navy-900); font-size: 0.875rem;"
+            >
+              UTF26
+            </span>
+            <span>UNSIKA TechFest</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#beranda">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#highlights">Highlight</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#speakers">Pembicara</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#schedule">Jadwal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle px-3"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Info Acara
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#highlights">
+                      <i class="bi bi-award me-2" aria-hidden="true"></i>Benefit Peserta
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#lokasi">
+                      <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Lokasi Auditorium
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#register">
+                      <i class="bi bi-ticket-perforated me-2" aria-hidden="true"></i>Ketentuan Tiket
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-2 ms-lg-3">
+              <button
+                type="button"
+                id="themeToggle"
+                class="btn btn-outline-secondary tf-touch-target"
+                data-theme-toggle
+                aria-pressed="false"
+                aria-label="Aktifkan mode gelap"
+              >
+                <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
+              </button>
+              <a href="#register" class="btn btn-accent tf-touch-target px-3">
+                Ambil Tiket Gratis
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile Controls (< lg) -->
+          <div class="d-flex d-lg-none align-items-center gap-2">
+            <button
+              type="button"
+              class="btn btn-outline-secondary tf-touch-target"
+              data-theme-toggle
+              aria-pressed="false"
+              aria-label="Aktifkan mode gelap"
+            >
+              <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary tf-touch-target"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileMenuOffcanvas"
+              aria-controls="mobileMenuOffcanvas"
+              aria-label="Buka menu navigasi"
+            >
+              <i class="bi bi-list fs-5" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Offcanvas Mobile Menu (Modul 5.9) -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="mobileMenuOffcanvas"
+      aria-labelledby="mobileMenuLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h2 class="offcanvas-title fs-5 fw-bold" id="mobileMenuLabel">Menu TechFest 2026</h2>
+        <button
+          type="button"
+          class="btn-close tf-touch-target"
+          data-bs-dismiss="offcanvas"
+          aria-label="Tutup menu"
+        ></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <nav aria-label="Navigasi seluler">
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#highlights">Highlight &amp; Kuota</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#speakers">Pembicara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#schedule">Jadwal Acara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-2 fs-5" href="#lokasi">Lokasi</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="pt-3 border-top d-grid gap-2">
+          <button
+            type="button"
+            class="btn btn-outline-secondary tf-touch-target gap-2"
+            data-theme-toggle
+            aria-pressed="false"
+          >
+            <i class="bi bi-moon-stars-fill" data-theme-icon aria-hidden="true"></i>
+            <span data-theme-label>Mode Gelap</span>
+          </button>
+          <a href="#register" class="btn btn-accent tf-touch-target" data-bs-dismiss="offcanvas">
+            Ambil Tiket Gratis
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Dismissible Announcement Alert (Modul 5.4) -->
+      <div class="container pt-3">
+        <div
+          class="alert alert-warning alert-dismissible fade show d-flex align-items-center justify-content-between mb-0"
+          role="alert"
+        >
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-megaphone-fill flex-shrink-0" aria-hidden="true"></i>
+            <span>
+              <strong>Registrasi Early Bird dibuka.</strong> Kuota workshop gratis ditutup pada
+              <strong>10 Desember 2026</strong> pukul 23.59 WIB.
+            </span>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Tutup pengumuman"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Hero Section (Modul 5.1, 5.2, 5.3, 5.4) -->
+      <section id="beranda" class="py-5">
+        <div class="container">
+          <div class="p-4 p-lg-5 rounded-3 tf-surface tf-hero-grid">
+            <div class="row align-items-center g-4 g-lg-5">
+              <div class="col-lg-7">
+                <p class="fw-semibold text-body-secondary mb-2">
+                  <i class="bi bi-calendar-event me-2" aria-hidden="true"></i>
+                  19–20 Desember 2026 · Auditorium UNSIKA Karawang
+                </p>
+                <h1 class="display-4 fw-bold mb-3">
+                  Merancang Web Modern yang
+                  <span class="font-editorial">Terukur</span> &amp; Siap Produksi
+                </h1>
+                <p class="lead text-body-secondary mb-4" style="max-width: 58ch;">
+                  Dua hari konferensi rekayasa web, cloud architecture, dan keamanan aplikasi
+                  bersama praktisi industri dan dosen Fasilkom UNSIKA. Gratis untuk mahasiswa dan
+                  terbuka bagi pengembang umum.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="#register" class="btn btn-accent btn-lg tf-touch-target px-4">
+                    Ambil Tiket Gratis
+                  </a>
+                  <a href="#schedule" class="btn btn-outline-primary btn-lg tf-touch-target px-4">
+                    Lihat Jadwal
+                  </a>
+                </div>
+              </div>
+
+              <!-- Editorial Auditorium Pass Visual (Zero External Image Dependencies) -->
+              <div class="col-lg-5">
+                <div class="tf-hero-card rounded-3 overflow-hidden shadow-sm">
+                  <div class="tf-pass-strip px-4 py-3 d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold small">FASILKOM UNSIKA · KARAWANG</span>
+                    <span class="font-mono-code small">EDISI 2026</span>
+                  </div>
+                  <div class="p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                      <svg
+                        width="56"
+                        height="56"
+                        viewBox="0 0 56 56"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="img-fluid rounded-2 flex-shrink-0"
+                        role="img"
+                        aria-label="Emblem resmi UNSIKA TechFest 2026"
+                      >
+                        <rect width="56" height="56" rx="8" fill="#1E3A5F" />
+                        <path d="M14 16H42V22H31V42H25V22H14V16Z" fill="#FFFFFF" />
+                        <rect x="35" y="31" width="9" height="9" rx="2" fill="#EAB308" />
+                      </svg>
+                      <div>
+                        <div class="fw-bold fs-5">UNSIKA TechFest</div>
+                        <div class="text-body-secondary small">
+                          3 Track Utama · 6 Pembicara · 350 Kursi
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row g-2 text-start border-top pt-3">
+                      <div class="col-4">
+                        <div class="small text-body-secondary">Hari 1</div>
+                        <div class="fw-bold">Keynote</div>
+                      </div>
+                      <div class="col-4">
+                        <div class="small text-body-secondary">Hari 2</div>
+                        <div class="fw-bold">Workshop</div>
+                      </div>
+                      <div class="col-4">
+                        <div class="small text-body-secondary">Tiket</div>
+                        <div class="fw-bold">Gratis</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Placeholders (Filled in Phases 3 & 4) -->
+      <section id="highlights" class="py-5 tf-section-divider">
+        <div class="container">
+          <h2 class="h3 fw-bold mb-2">Highlight &amp; Kuota Track</h2>
+          <p class="text-body-secondary mb-0">
+            Sorotan sesi utama dan ketersediaan kursi per jalur workshop.
+          </p>
+        </div>
+      </section>
+
+      <section id="speakers" class="py-5 tf-section-divider">
+        <div class="container">
+          <h2 class="h3 fw-bold mb-2">Pembicara</h2>
+          <p class="text-body-secondary mb-0">
+            Praktisi dan akademisi yang berbagi studi kasus langsung.
+          </p>
+        </div>
+      </section>
+
+      <section id="schedule" class="py-5 tf-section-divider">
+        <div class="container">
+          <h2 class="h3 fw-bold mb-2">Jadwal Acara</h2>
+          <p class="text-body-secondary mb-0">
+            Susunan seminar dan workshop selama dua hari di Auditorium UNSIKA.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="py-5 tf-section-divider">
+        <div class="container">
+          <h2 class="h3 fw-bold mb-2">Pertanyaan Umum</h2>
+          <p class="text-body-secondary mb-0">
+            Informasi teknis terkait kehadiran, sertifikat, dan perlengkapan workshop.
+          </p>
+        </div>
+      </section>
+
+      <section id="register" class="py-5 tf-section-divider">
+        <div class="container">
+          <h2 class="h3 fw-bold mb-2">Pendaftaran Peserta</h2>
+          <p class="text-body-secondary mb-0">
+            Formulir registrasi peserta dan pratinjau kartu akses acara.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer id="lokasi" class="py-5 tf-section-divider tf-surface">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-6">
+            <h2 class="h5 fw-bold mb-2">UNSIKA TechFest 2026</h2>
+            <p class="text-body-secondary mb-2" style="max-width: 48ch;">
+              Diselenggarakan oleh Program Studi Informatika, Fakultas Ilmu Komputer, Universitas
+              Singaperbangsa Karawang.
+            </p>
+            <p class="small text-body-secondary mb-0">
+              <i class="bi bi-geo-alt me-1" aria-hidden="true"></i>
+              Jl. HS. Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang 41361
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h3 class="h6 fw-bold mb-2">Navigasi</h3>
+            <ul class="list-unstyled d-grid gap-1 mb-0">
+              <li><a class="link-body-emphasis text-decoration-none" href="#beranda">Beranda</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#speakers">Pembicara</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#schedule">Jadwal</a></li>
+              <li><a class="link-body-emphasis text-decoration-none" href="#register">Daftar</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3 class="h6 fw-bold mb-2">Kontak Panitia</h3>
+            <p class="small text-body-secondary mb-1">techfest@fasilkom.unsika.ac.id</p>
+            <p class="small text-body-secondary mb-0">&copy; 2026 Fasilkom UNSIKA</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JS Bundle via jsDelivr CDN (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Application Script -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
