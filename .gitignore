@@ -1,0 +1,18 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env & Logs
+.env
+.env.*
+*.log
+
+# Dependencies & Build
+node_modules/
+dist/
+
+# Local scratch & tool artifacts
+.scratch/
+.ua/tmp/
