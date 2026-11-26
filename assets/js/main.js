@@ -295,6 +295,123 @@
     });
   }
 
+  const LEVEL_LABELS = {
+    1: 'Level 1: Pemula',
+    2: 'Level 2: Dasar',
+    3: 'Level 3: Menengah',
+    4: 'Level 4: Lanjut',
+    5: 'Level 5: Mahir',
+  };
+
+  const TRACK_PREFIX = {
+    'Web Modern': 'WEB',
+    'AI & Cloud': 'AIC',
+    'Cyber Security': 'SEC',
+  };
+
+  /**
+   * Compute a deterministic ticket code from participant name and track.
+   * @param {string} name
+   * @param {string} track
+   * @returns {string}
+   */
+  function buildTicketCode(name, track) {
+    const prefix = TRACK_PREFIX[track] || 'GEN';
+    const clean = (name || '').trim();
+    if (!clean) return `UTF26-${prefix}-001`;
+    let sum = 0;
+    for (let i = 0; i < clean.length; i += 1) {
+      sum = (sum + clean.charCodeAt(i) * (i + 1)) % 900;
+    }
+    return `UTF26-${prefix}-${String(100 + sum)}`;
+  }
+
+  /**
+   * Live Conference Pass preview + Bootstrap 5.3 form validation & Toast (Modul 5.6, 5.8, 5.10-5.12).
+   */
+  function initRegistrationForm() {
+    const form = document.getElementById('registrationForm');
+    if (!form) return;
+
+    const nameInput = document.getElementById('regName');
+    const githubInput = document.getElementById('regGithub');
+    const trackSelect = document.getElementById('regTrack');
+    const levelRange = document.getElementById('regLevel');
+    const levelBadge = document.getElementById('regLevelBadge');
+    const submitBtn = document.getElementById('regSubmitBtn');
+    const submitLabel = document.getElementById('regSubmitLabel');
+    const spinner = document.getElementById('regSpinner');
+    const toastEl = document.getElementById('registrationToast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    const passName = document.getElementById('passName');
+    const passGithub = document.getElementById('passGithub');
+    const passTrack = document.getElementById('passTrack');
+    const passCategory = document.getElementById('passCategory');
+    const passLevel = document.getElementById('passLevel');
+    const passCode = document.getElementById('passCode');
+
+    function syncLivePass() {
+      const rawName = nameInput ? nameInput.value.trim() : '';
+      const rawGithub = githubInput ? githubInput.value.trim().replace(/^@+/, '') : '';
+      const trackVal = trackSelect ? trackSelect.value : '';
+      const selectedCat = form.querySelector('input[name="regCategory"]:checked');
+      const levelVal = levelRange ? Number(levelRange.value) : 2;
+      const levelText = LEVEL_LABELS[levelVal] || LEVEL_LABELS[2];
+
+      if (levelBadge) levelBadge.textContent = levelText;
+      if (passName) passName.textContent = rawName || 'Nama Peserta';
+      if (passGithub) passGithub.textContent = `@${rawGithub || 'username'}`;
+      if (passTrack) passTrack.textContent = trackVal || 'Belum dipilih';
+      if (passCategory) {
+        passCategory.textContent = selectedCat ? selectedCat.value : 'Mahasiswa UNSIKA';
+      }
+      if (passLevel) passLevel.textContent = levelText;
+      if (passCode) passCode.textContent = buildTicketCode(rawName, trackVal);
+    }
+
+    form.addEventListener('input', syncLivePass);
+    form.addEventListener('change', syncLivePass);
+    syncLivePass();
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      const participantName = nameInput ? nameInput.value.trim() : 'Peserta';
+      const chosenTrack = trackSelect ? trackSelect.value : 'Umum';
+      const ticketCode = buildTicketCode(participantName, chosenTrack);
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (spinner) spinner.classList.remove('d-none');
+      if (submitLabel) submitLabel.textContent = 'Memproses Tiket...';
+
+      window.setTimeout(() => {
+        if (toastMessage) {
+          toastMessage.textContent = `Tiket berhasil dipesan untuk ${participantName} (${chosenTrack}) · Kode ${ticketCode}`;
+        }
+        if (toastEl && typeof bootstrap !== 'undefined') {
+          bootstrap.Toast.getOrCreateInstance(toastEl).show();
+        }
+
+        if (submitBtn) submitBtn.disabled = false;
+        if (spinner) spinner.classList.add('d-none');
+        if (submitLabel) submitLabel.textContent = 'Ambil Tiket Gratis';
+
+        form.reset();
+        form.classList.remove('was-validated');
+        syncLivePass();
+      }, 500);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initThemeSwitcher();
     initOffcanvasNavigation();
@@ -302,5 +419,6 @@
     initSpeakerFilters();
     initSpeakerModal();
     initSchedulePagination();
+    initRegistrationForm();
   });
 })();

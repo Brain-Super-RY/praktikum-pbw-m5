@@ -225,6 +225,13 @@ body {
   background-color: var(--tf-ink);
 }
 
+/* Sticky Conference Pass Offset Below Navbar */
+@media (min-width: 992px) {
+  .tf-sticky-pass {
+    top: 5.5rem;
+  }
+}
+
 /* Reduced Motion Guard */
 @media (prefers-reduced-motion: reduce) {
   *,
